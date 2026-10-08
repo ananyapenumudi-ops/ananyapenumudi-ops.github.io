@@ -1,34 +1,5 @@
-import { useEffect, useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { images, inTheLab, projects, type Project } from '@/data';
-import { reducedMotion } from '@/lib/motion';
-
-function Gallery({ shots }: { shots: NonNullable<Project['gallery']> }) {
-  const [i, setI] = useState(0);
-  const [auto, setAuto] = useState(true);
-
-  useEffect(() => {
-    if (!auto || reducedMotion()) return;
-    const t = window.setInterval(() => setI((n) => (n + 1) % shots.length), 3200);
-    return () => clearInterval(t);
-  }, [auto, shots.length]);
-
-  return (
-    <div className="gallery">
-      <div className="gallery-main">
-        <span className="pill pill-mustard pill-sm">{shots[i].caption}</span>
-        <img key={shots[i].src} src={shots[i].src} alt={`Elementium: ${shots[i].caption}`} className="animate-[fadeIn_.5s_ease]" />
-      </div>
-      <div className="gallery-thumbs">
-        {shots.map((s, n) => (
-          <button key={s.src} className={n === i ? 'on' : ''} aria-label={`Show ${s.caption}`} onClick={() => { setAuto(false); setI(n); }}>
-            <img src={s.src} alt="" loading="lazy" />
-          </button>
-        ))}
-      </div>
-    </div>
-  );
-}
 
 function ProjectCard({ p, index, flip }: { p: Project; index: number; flip: boolean }) {
   return (
@@ -44,7 +15,6 @@ function ProjectCard({ p, index, flip }: { p: Project; index: number; flip: bool
         <h3>{p.title}</h3>
         <p>{p.body}</p>
         {p.more && <p>{p.more}</p>}
-        {p.gallery && <Gallery shots={p.gallery} />}
         <div className="proj-tags">{p.tags.map((t) => <span key={t}>{t}</span>)}</div>
         <div className="proj-foot">
           <span className="proj-date">{p.date}</span>

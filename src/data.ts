@@ -7,16 +7,9 @@ export const links = {
   resume: './Ananya_Penumudi_Resume.pdf',
 };
 
-const el = (name: string) => `./projects/elementium/${name}.jpg`;
 const art = (name: string) => `./art/${name}.svg`;
 
 export const images = {
-  elLab: el('lab-titration'),
-  elTutor: el('elio-tutor'),
-  elDashboard: el('dashboard'),
-  elPh: el('ph-titration'),
-  elViva: el('viva-arcade'),
-  elNotebook: el('notebook'),
   elLogo: './projects/elementium/logo.png',
   cat: art('cat'),
   duck: art('duck'),
@@ -44,6 +37,7 @@ export const docs = {
   ideathonCert: drive('1jPCXMfigmvvXgMQub1-DiE9gDc0QkC1H'),
   tableauCert: 'https://www.udemy.com/certificate/UC-f3417426-3a7c-4bad-aeaf-892ec4fb1019/',
   wipeRepo: 'https://github.com/VedarthamSaaket/oblvn',
+  kartgenLor: './docs/Kartgen_Letter_of_Recommendation.pdf',
 };
 
 // The hover-expand strip: things I want to build next, each with its own mascot.
@@ -89,7 +83,8 @@ export const experience = [
   {
     role: 'Operations Intern',
     org: 'Kartgen Infotech LLP',
-    date: 'Apr – Jul 2025',
+    date: 'Jan – Apr 2025',
+    link: { label: 'Letter of recommendation', url: docs.kartgenLor },
     points: ['Supported business development, process coordination and stakeholder communication (remote).'],
   },
 ];
@@ -110,7 +105,6 @@ export type Project = {
   more?: string;
   tags: string[];
   links: { label: string; url: string }[];
-  gallery?: { src: string; caption: string }[];
   status?: string;
   theme: 'red' | 'pink' | 'sage' | 'mustard';
 };
@@ -127,14 +121,7 @@ export const projects: Project[] = [
     more: 'A rule-based engine enforces safe experimental order, an observation notebook records every reading, and results such as water hardness are calculated automatically at the endpoint. Built for a whole class at once.',
     tags: ['React Three Fiber', 'Three.js', 'FastAPI', 'MongoDB Atlas', 'Gemini AI'],
     links: [{ label: 'GitHub', url: 'https://github.com/Ananyapenumudi/elementium' }],
-    gallery: [
-      { src: images.elLab, caption: '3D titration bench' },
-      { src: images.elTutor, caption: 'Elio, the AI tutor' },
-      { src: images.elDashboard, caption: 'Student dashboard' },
-      { src: images.elPh, caption: 'pH titration curve' },
-      { src: images.elViva, caption: 'Viva arcade' },
-      { src: images.elNotebook, caption: 'Lab notebook' },
-    ],
+    // TODO: add { label: 'Live site', url: ... } once Elementium is deployed
   },
   {
     slug: 'kavach',
