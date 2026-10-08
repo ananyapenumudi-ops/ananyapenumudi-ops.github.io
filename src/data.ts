@@ -7,18 +7,10 @@ export const links = {
   resume: './Ananya_Penumudi_Resume.pdf',
 };
 
-const unsplash = (id: string) => `https://images.unsplash.com/photo-${id}?w=1400&q=75&auto=format&fit=crop`;
 const el = (name: string) => `./projects/elementium/${name}.jpg`;
+const art = (name: string) => `./art/${name}.svg`;
 
 export const images = {
-  wheelchair: unsplash('1555255707-c07966088b7b'),
-  auralyn: unsplash('1434494878577-86c23bcb06b9'),
-  kavach: unsplash('1474487548417-781cb71495f3'),
-  syncope: unsplash('1530497610245-94d3c16cda28'),
-  wipe: unsplash('1515879218367-8466d910aaa4'),
-  focusflow: unsplash('1484480974693-6ca0a78fb36b'),
-  ideavoid: unsplash('1519389950473-47ba0277781c'),
-  bhel: unsplash('1581091226825-a6a2a5aee158'),
   elLab: el('lab-titration'),
   elTutor: el('elio-tutor'),
   elDashboard: el('dashboard'),
@@ -26,218 +18,170 @@ export const images = {
   elViva: el('viva-arcade'),
   elNotebook: el('notebook'),
   elLogo: './projects/elementium/logo.png',
+  cat: art('cat'),
+  duck: art('duck'),
+  flower: art('flower'),
+  frog: art('frog'),
+  daisy: art('daisy'),
+  train: art('train'),
+  flask: art('flask'),
+  lock: art('lock'),
 };
 
-// Feeds the zoom slider in the Work section.
-export const sliderItems = [
-  { number: '01', src: images.elLab, title: 'ELEMENTIUM · LAB', desc: '360° 3D titration bench, built in React Three Fiber' },
-  { number: '02', src: images.wheelchair, title: 'SMART WHEELCHAIR', desc: 'Vision-based braking & GPS geofencing' },
-  { number: '03', src: images.elTutor, title: 'ELEMENTIUM · ELIO', desc: 'Gemini-powered tutor that catches mistakes live' },
-  { number: '04', src: images.auralyn, title: 'AURALYN', desc: 'ESP32-S3 wearable reading emotion from biometrics' },
-  { number: '05', src: images.kavach, title: 'KAVACH', desc: 'Systems-engineering thesis on India’s train protection' },
-  { number: '06', src: images.elDashboard, title: 'ELEMENTIUM · BENCH', desc: 'Student dashboard, leaderboard & Viva arcade' },
-  { number: '07', src: images.syncope, title: 'SYNCOPE', desc: 'Wearable fall detection with caregiver alerts' },
-  { number: '08', src: images.wipe, title: 'SECURE WIPE', desc: 'Cryptographically verified data sanitisation' },
-  { number: '09', src: images.focusflow, title: 'FOCUSFLOW', desc: 'ADHD-friendly productivity with mood tracking' },
-  { number: '10', src: images.ideavoid, title: 'IDEAVOID', desc: 'Startup idea validation & peer feedback' },
+// The hover-expand scrapbook strip.
+export const scrapbook = [
+  { src: images.train, alt: 'Illustrated train with a safety shield', code: '# 01 · KAVACH', title: 'KAVACH thesis', caption: 'Train protection, explained as a system' },
+  { src: images.elLab, alt: 'Elementium 3D titration bench', code: '# 02 · Elementium', title: 'The 3D lab bench', caption: 'Drag, pour, swirl, titrate' },
+  { src: images.flask, alt: 'Illustrated smiling flask', code: '# 03 · Elementium', title: 'Chemistry, but cute', caption: 'Wine red → purple → blue' },
+  { src: images.elTutor, alt: 'Elio the AI tutor chatting in Elementium', code: '# 04 · Elementium', title: 'Meet Elio', caption: 'A Gemini-powered tutor that catches mistakes' },
+  { src: images.lock, alt: 'Illustrated padlock wearing sunglasses', code: '# 05 · Secure Wipe', title: 'Secure data wiping', caption: 'Wipes you can actually prove' },
+  { src: images.frog, alt: 'Illustrated frog holding an ESP32 board', code: '# 06 · Bench buddy', title: 'Embedded at heart', caption: 'ESP32s, sensors and solder smoke' },
+  { src: images.elDashboard, alt: 'Elementium student dashboard', code: '# 07 · Elementium', title: 'Student bench', caption: 'Leaderboard, Viva arcade & free lab' },
+  { src: images.cat, alt: 'Illustrated black cat holding a mug', code: '# 08 · Fuel', title: 'Powered by chai', caption: 'and very long debugging sessions' },
+  { src: images.daisy, alt: 'Illustrated smiling daisy climbing stairs', code: '# 09 · Always', title: 'One step at a time', caption: 'Ship, document, repeat' },
 ];
 
-export const roles = [
-  'Embedded Systems Engineer',
-  'IoT Builder',
-  'Edge AI Tinkerer',
-  'Safety-Critical Systems Thinker',
-];
-
-export const stats = [
-  { value: 8.92, decimals: 2, label: 'CGPA · B.Tech CSE–IoT' },
-  { value: 9, suffix: '+', label: 'Projects shipped' },
-  { value: 3, label: 'Industry stints' },
-  { value: 5, suffix: '+', label: 'Hackathons & conclaves' },
-];
+export const roles = ['embedded engineer', 'IoT tinkerer', 'safety nerd', 'maker of cute things'];
 
 export const traits = [
-  {
-    title: 'Systems-first',
-    body: 'I start with the architecture: requirements, failure modes, safety margins. Then I write code. KAVACH taught me that the boring parts are what keep people safe.',
-  },
-  {
-    title: 'Hardware that thinks',
-    body: 'My favourite place is where sensors meet models: an ESP32 reading biometrics, a camera spotting obstacles, a wearable that knows when you fall.',
-  },
-  {
-    title: 'Build it, then explain it',
-    body: 'I prototype fast and document properly. I care about the thesis, the README and the demo as much as I care about the circuit.',
-  },
+  { title: 'Systems-first', art: images.train, body: 'I start with requirements, failure modes and safety margins, then write code. KAVACH taught me that the boring parts are what keep people safe.' },
+  { title: 'Hardware that thinks', art: images.frog, body: 'My happy place is where sensors meet models: an ESP32 reading the world, a model deciding what to do about it.' },
+  { title: 'Serious, but make it fun', art: images.duck, body: 'Calm and structured on the inside, playful on the outside. My chemistry lab has a mascot, and I think more engineering should.' },
 ];
 
 export const experience = [
   {
     role: 'Industrial Trainee',
     org: 'Bharat Heavy Electricals Limited (BHEL), Bengaluru',
-    date: 'Jun 2026 – Jul 2026',
-    tag: 'Industry',
+    date: 'Jun – Jul 2026',
     points: [
-      'Industrial training at the BHEL Solar Business Division: manufacturing processes, production workflows and large-scale engineering systems.',
-      'Studied railway safety technology, signalling infrastructure and KAVACH through technical discussions and documentation.',
-      'Observed quality assurance, system integration, project lifecycle management and safety-critical engineering operations.',
+      'Industrial training at the BHEL Solar Business Division: manufacturing, production workflows and large-scale engineering systems.',
+      'Studied railway safety, signalling infrastructure and KAVACH through technical discussions and documentation.',
     ],
   },
   {
     role: 'Software Engineering Intern · Position Tracker',
     org: 'Alfago',
     date: 'Jan 2026',
-    tag: 'Software',
-    points: [
-      'Contributed to a Position Tracker that monitors transaction-level and portfolio-level profit & loss.',
-      'Implemented tax-lot based PnL calculations for accurate financial reporting.',
-      'Collaborated on backend business logic for transaction processing and performance tracking.',
-    ],
+    points: ['Implemented tax-lot based PnL calculations for transaction- and portfolio-level profit & loss tracking.'],
   },
   {
     role: 'Operations Intern',
     org: 'Kartgen Infotech LLP',
-    date: 'Apr 2025 – Jul 2025',
-    tag: 'Operations',
-    points: [
-      'Supported business development and operations during a three-month remote internship.',
-      'Handled process coordination, stakeholder communication and workflow management.',
-    ],
+    date: 'Apr – Jul 2025',
+    points: ['Supported business development, process coordination and stakeholder communication (remote).'],
   },
 ];
 
 export const education = [
-  { school: 'VNR Vignana Jyothi Institute of Engineering & Technology', degree: 'B.Tech, CSE (IoT)', date: '2023 – Present', score: 'CGPA 8.92 / 10' },
-  { school: 'Sri Chaitanya Junior College', degree: 'Intermediate, Telangana State Board', date: '2021 – 2023', score: '97.4%' },
+  { school: 'VNR Vignana Jyothi Institute of Engineering & Technology', degree: 'B.Tech, CSE (IoT)', date: '2023 – now', score: 'CGPA 8.92 / 10' },
+  { school: 'Sri Chaitanya Junior College', degree: 'Intermediate, Telangana State Board', date: '2021 – 23', score: '97.4%' },
   { school: 'Bharatiya Vidya Bhavan’s Public School', degree: 'High School, CBSE', date: '2021', score: 'GPA 9.38 / 10' },
 ];
 
-// cat: used by the project filter. icon: key into ICONS in main.js.
-export const projects = [
+export type Project = {
+  slug: string;
+  title: string;
+  kicker: string;
+  date: string;
+  art: string;
+  body: string;
+  more?: string;
+  tags: string[];
+  links: { label: string; url: string }[];
+  gallery?: { src: string; caption: string }[];
+  status?: string;
+  theme: 'red' | 'pink' | 'sage' | 'mustard';
+};
+
+export const projects: Project[] = [
   {
-    title: 'Smart AI Wheelchair',
-    kicker: 'IoT + Edge AI',
-    date: 'Jan 2026',
-    cat: ['iot', 'ai'],
-    icon: 'wheel',
-    image: images.wheelchair,
-    featured: true,
-    body: 'A wheelchair that sees. Vision-based obstacle detection triggers automatic braking, while GPS geofencing and caregiver alerts keep the rider safe beyond line of sight.',
-    tags: ['Computer Vision', 'Sensor Fusion', 'IMU', 'GPS Geofencing', 'Edge Inference'],
-    links: [],
-  },
-  {
-    title: 'Auralyn',
-    kicker: 'IoT + AI + Healthcare',
-    date: '2025 – Ongoing',
-    cat: ['iot', 'ai'],
-    icon: 'pulse',
-    image: images.auralyn,
-    featured: true,
-    body: 'A wearable emotional-wellness ecosystem. Biometric sensing on an ESP32-S3 streams over BLE into AI mood analysis, with separate views for patients, therapists and family.',
-    tags: ['ESP32-S3', 'BLE', 'Biometrics', 'Mood AI', 'TypeScript'],
-    links: [{ label: 'GitHub', url: 'https://github.com/Ananyapenumudi/auralyn' }],
-  },
-  {
+    slug: 'elementium',
     title: 'Elementium AI',
-    kicker: '3D Web + AI · EdTech',
+    kicker: 'Virtual chemistry lab · 3D + AI',
     date: '2026',
-    cat: ['ai', 'web'],
-    icon: 'atom',
-    image: images.elLab,
-    gallery: [images.elLab, images.elTutor, images.elDashboard, images.elPh, images.elViva, images.elNotebook],
-    featured: true,
-    body: 'An intelligent virtual chemistry lab. Explore a 360° 3D lab, drag apparatus onto the bench and run a real-time titration with colour-change chemistry, guided by a Gemini-powered AI tutor that catches your mistakes.',
+    art: images.flask,
+    theme: 'pink',
+    body: 'An intelligent virtual chemistry lab. Explore a 360° 3D lab, drag apparatus onto the bench and run a real-time titration with colour-change chemistry, guided by Elio, a Gemini-powered tutor who catches your mistakes.',
+    more: 'A rule-based engine enforces safe experimental order, an observation notebook records every reading, and results such as water hardness are calculated automatically at the endpoint. Built for a whole class at once.',
     tags: ['React Three Fiber', 'Three.js', 'FastAPI', 'MongoDB Atlas', 'Gemini AI'],
     links: [{ label: 'GitHub', url: 'https://github.com/Ananyapenumudi/elementium' }],
-  },
-  {
-    title: 'KAVACH: Beyond Collision Prevention',
-    kicker: 'Research Thesis · Systems Engineering',
-    date: 'Jun 2026',
-    cat: ['systems'],
-    icon: 'rail',
-    image: images.kavach,
-    featured: true,
-    body: 'A systems-engineering analysis of India’s indigenous Automatic Train Protection system: architecture, operational modes, communication framework and functional safety, written under industry guidance from BHEL. Comes with an interactive mode simulator and a digital twin.',
-    tags: ['Functional Safety', 'System Architecture', 'V&V', 'Requirements Traceability'],
-    links: [
-      { label: 'Mode Simulator', url: 'https://github.com/Ananyapenumudi/kavach-mode-simulator' },
-      { label: 'Digital Twin', url: 'https://github.com/Ananyapenumudi/KAVACH-Digital-Twin' },
+    gallery: [
+      { src: images.elLab, caption: '3D titration bench' },
+      { src: images.elTutor, caption: 'Elio, the AI tutor' },
+      { src: images.elDashboard, caption: 'Student dashboard' },
+      { src: images.elPh, caption: 'pH titration curve' },
+      { src: images.elViva, caption: 'Viva arcade' },
+      { src: images.elNotebook, caption: 'Lab notebook' },
     ],
   },
   {
-    title: 'Syncope',
-    kicker: 'Wearable IoT',
-    date: 'Aug 2025',
-    cat: ['iot'],
-    icon: 'fall',
-    image: images.syncope,
-    body: 'A wearable fall-detection system. Motion sensors classify falls in real time and automatically alert caregivers.',
-    tags: ['Accelerometer', 'Arduino', 'GSM Alerts'],
-    links: [],
+    slug: 'kavach',
+    title: 'Beyond Collision Prevention',
+    kicker: 'KAVACH · research thesis',
+    date: 'Jun 2026',
+    art: images.train,
+    theme: 'mustard',
+    body: 'A systems-engineering analysis of KAVACH, India’s indigenous Automatic Train Protection system: architecture, operational modes, communication framework and functional safety, written under industry guidance from BHEL Bengaluru.',
+    more: 'It comes with an interactive simulator of KAVACH’s modes of operation and a digital twin.',
+    tags: ['Functional Safety', 'System Architecture', 'V&V', 'Requirements Traceability'],
+    links: [
+      { label: 'Mode simulator', url: 'https://github.com/Ananyapenumudi/kavach-mode-simulator' },
+      { label: 'Digital twin', url: 'https://github.com/Ananyapenumudi/KAVACH-Digital-Twin' },
+    ],
   },
   {
+    slug: 'wipe',
     title: 'AI-Enhanced Secure Data Wiping',
-    kicker: 'AI + Cybersecurity',
+    kicker: 'AI + cybersecurity',
     date: 'Nov 2025',
-    cat: ['ai', 'systems'],
-    icon: 'shield',
-    image: images.wipe,
-    body: 'A secure data-sanitisation platform with cryptographic verification of every wipe and AI-based anomaly detection.',
-    tags: ['Cryptography', 'Anomaly Detection', 'Security'],
-    links: [],
-  },
-  {
-    title: 'FocusFlow',
-    kicker: 'AI + Web',
-    date: 'Apr 2025',
-    cat: ['ai', 'web'],
-    icon: 'focus',
-    image: images.focusflow,
-    body: 'An ADHD-friendly productivity platform with mood tracking, journaling, facial-expression analysis and gamified focus tools.',
-    tags: ['React', 'Express', 'Facial Expression AI'],
-    links: [],
-  },
-  {
-    title: 'Ideavoid',
-    kicker: 'Web Platform',
-    date: 'Nov 2024',
-    cat: ['web'],
-    icon: 'bulb',
-    image: images.ideavoid,
-    body: 'A startup-idea validation platform for peer feedback and market-viability assessment.',
-    tags: ['Full-stack', 'Product'],
+    art: images.lock,
+    theme: 'sage',
+    body: 'A data-sanitisation platform where every wipe comes with cryptographic proof, and AI-based anomaly detection flags anything that looks off.',
+    tags: ['Cryptographic verification', 'Anomaly detection', 'Security'],
     links: [],
   },
 ];
 
-export const skillGroups = [
-  { name: 'IoT & Embedded', items: ['Arduino', 'ESP32', 'SPI', 'I2C', 'PWM', 'GPS', 'GSM', 'Accelerometer', 'BLE', 'Sensor Fusion'] },
-  { name: 'AI & Vision', items: ['Computer Vision', 'Edge Inference', 'Mood Detection', 'Anomaly Detection'] },
-  { name: 'Systems Engineering', items: ['Requirements Analysis', 'Functional Safety', 'Verification & Validation', 'System Architecture', 'Traceability', 'Safety-Critical Systems'] },
-  { name: 'Languages', items: ['C', 'C++', 'Python', 'Java', 'JavaScript', 'R', 'HTML', 'CSS', 'DSA'] },
-  { name: 'Data & Cloud', items: ['SQL', 'MySQL', 'MongoDB', 'AWS', 'Tableau', 'Data Visualization'] },
-  { name: 'Design & Tools', items: ['Figma', 'AutoCAD', 'StarUML', 'MS Excel', 'DevOps / CI'] },
+// Not built yet: shown honestly as a concept.
+export const inTheLab: Project[] = [
+  {
+    slug: 'auralyn',
+    title: 'Auralyn',
+    kicker: 'Wearable wellness · concept',
+    date: 'Designing',
+    art: images.flower,
+    theme: 'red',
+    status: 'Concept',
+    body: 'A wearable emotional-wellness ecosystem: biometric sensing on an ESP32-S3, BLE to apps for the wearer, their therapist and their family, with AI mood analysis in between.',
+    tags: ['ESP32-S3', 'BLE', 'Biometrics', 'Mood AI'],
+    links: [],
+  },
+];
+
+export const skills = [
+  'Arduino', 'ESP32', 'SPI · I2C · PWM', 'BLE', 'GPS · GSM', 'Sensor fusion', 'C', 'C++', 'Python', 'Java', 'JavaScript', 'R', 'SQL',
+  'Computer vision', 'Edge inference', 'Anomaly detection', 'Functional safety', 'Requirements', 'V&V', 'System architecture',
+  'MongoDB', 'MySQL', 'AWS', 'DevOps / CI', 'Tableau', 'Figma', 'AutoCAD', 'StarUML',
 ];
 
 export const certifications = [
-  { title: 'DevOps with Real-Time Practical Exposure', org: 'Brainovision · AICTE approved · VNRVJIET', date: 'Jul – Nov 2025' },
+  { title: 'DevOps with Real-Time Practical Exposure', org: 'Brainovision · AICTE approved', date: 'Jul – Nov 2025' },
   { title: 'Tableau Certified Data Analyst Training', org: 'Udemy · 59 hours', date: 'Jun 2024' },
   { title: 'RoboJAM Robotics Workshop', org: 'VNRVJIET · Convergence 2K23', date: 'Dec 2023' },
 ];
 
 export const activities = [
-  { year: '2025', title: 'Smart India Hackathon', desc: 'Solution design, prototyping & technical documentation' },
+  { year: '2025', title: 'Smart India Hackathon', desc: 'Solution design, prototyping & documentation' },
   { year: '2025', title: '24-hour Hackathon · Convergence', desc: 'VNRVJIET' },
   { year: '2025', title: 'National Conclave', desc: 'CBIT' },
   { year: '2024', title: '24-hour Hackathon · DEMUX', desc: 'BVRIT' },
-  { year: '2023', title: 'IDEATHON 2023, 2nd Prize', desc: 'VNRVJIET', highlight: true },
+  { year: '2023', title: 'IDEATHON, 2nd Prize', desc: 'VNRVJIET', highlight: true },
 ];
 
 export const memberships = [
-  { title: 'Computer Society of India (CSI)', desc: 'VNRVJIET chapter: organising workshops, coding events & inter-college competitions' },
-  { title: 'Art of Living Cultural Club', desc: 'Organising college events and volunteering' },
+  { title: 'Computer Society of India', desc: 'VNRVJIET chapter: workshops, coding events, competitions' },
+  { title: 'Art of Living Cultural Club', desc: 'Event organising & volunteering' },
 ];
 
 export const languages = ['English', 'Hindi', 'Telugu'];

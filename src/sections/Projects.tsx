@@ -1,78 +1,60 @@
-import { useEffect, useRef, useState } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useEffect, useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
-import { images, projects } from '@/data';
+import { images, inTheLab, projects, type Project } from '@/data';
 import { reducedMotion } from '@/lib/motion';
 
-const FILTERS = [
-  ['all', 'All'],
-  ['iot', 'IoT & Embedded'],
-  ['ai', 'AI'],
-  ['systems', 'Systems & Safety'],
-  ['web', 'Web'],
-] as const;
+function Gallery({ shots }: { shots: NonNullable<Project['gallery']> }) {
+  const [i, setI] = useState(0);
+  const [auto, setAuto] = useState(true);
 
-const GALLERY_CAPTIONS = ['3D titration bench', 'Elio, the AI tutor', 'Student dashboard', 'pH titration curve', 'Viva arcade', 'Lab notebook'];
+  useEffect(() => {
+    if (!auto || reducedMotion()) return;
+    const t = window.setInterval(() => setI((n) => (n + 1) % shots.length), 3200);
+    return () => clearInterval(t);
+  }, [auto, shots.length]);
 
-type Project = (typeof projects)[number];
-
-function Links({ p }: { p: Project }) {
-  if (!p.links.length) return null;
   return (
-    <div className="pcard-links">
-      {p.links.map((l) => (
-        <a key={l.url} className="pill pill-mustard pill-sm" href={l.url} target="_blank" rel="noopener" data-magnetic>
-          {l.label} <ArrowUpRight />
-        </a>
-      ))}
+    <div className="gallery">
+      <div className="gallery-main">
+        <span className="pill pill-mustard pill-sm">{shots[i].caption}</span>
+        <img key={shots[i].src} src={shots[i].src} alt={`Elementium: ${shots[i].caption}`} className="animate-[fadeIn_.5s_ease]" />
+      </div>
+      <div className="gallery-thumbs">
+        {shots.map((s, n) => (
+          <button key={s.src} className={n === i ? 'on' : ''} aria-label={`Show ${s.caption}`} onClick={() => { setAuto(false); setI(n); }}>
+            <img src={s.src} alt="" loading="lazy" />
+          </button>
+        ))}
+      </div>
     </div>
   );
 }
 
-function Elementium({ p, hidden }: { p: Project; hidden: boolean }) {
-  const gallery = 'gallery' in p && p.gallery ? p.gallery : [p.image];
-  const [shot, setShot] = useState(0);
-  const img = useRef<HTMLImageElement>(null);
-
-  // auto-advance the screenshots until someone picks one
-  const [auto, setAuto] = useState(true);
-  useEffect(() => {
-    if (!auto || reducedMotion()) return;
-    const t = window.setInterval(() => setShot((s) => (s + 1) % gallery.length), 3200);
-    return () => clearInterval(t);
-  }, [auto, gallery.length]);
-
-  useEffect(() => {
-    if (img.current && !reducedMotion()) gsap.fromTo(img.current, { opacity: 0, scale: 1.04 }, { opacity: 1, scale: 1, duration: 0.7, ease: 'power2.out' });
-  }, [shot]);
-
+function ProjectCard({ p, index, flip }: { p: Project; index: number; flip: boolean }) {
   return (
-    <article className={`pcard feature${hidden ? ' hidden' : ''}`} data-cat={p.cat.join(' ')}>
-      <div className="pcard-img">
-        <img ref={img} src={gallery[shot]} alt={`Elementium AI: ${GALLERY_CAPTIONS[shot] ?? 'screenshot'}`} />
-        <span className="pill pill-mustard pill-sm feature-caption">{GALLERY_CAPTIONS[shot]}</span>
-        <div className="thumbs">
-          {gallery.map((g, i) => (
-            <button key={g} className={i === shot ? 'on' : ''} aria-label={`Show ${GALLERY_CAPTIONS[i]}`} onClick={() => { setAuto(false); setShot(i); }}>
-              <img src={g} alt="" loading="lazy" />
-            </button>
-          ))}
-        </div>
+    <article className={`proj theme-${p.theme}${flip ? ' flip' : ''}${p.status ? ' concept' : ''}`} data-reveal>
+      <div className="proj-art">
+        <span className="proj-num">{String(index + 1).padStart(2, '0')}</span>
+        {p.status && <span className="stamp">{p.status}</span>}
+        <img src={p.art} alt="" loading="lazy" />
       </div>
-      <div className="pcard-body">
-        <img className="feature-logo" src={images.elLogo} alt="Elementium logo" loading="lazy" />
-        <span className="pcard-kicker">Featured · {p.kicker}</span>
-        <h3>Elementium AI: an intelligent virtual chemistry lab</h3>
-        <p className="body">{p.body}</p>
-        <p className="body" style={{ marginTop: 10 }}>
-          Built for a whole class at once: a rule-based engine enforces safe experimental order, an observation notebook
-          records every reading, and results such as water hardness in ppm CaCO₃ are calculated automatically at the endpoint.
-        </p>
-        <div className="pcard-tags">{p.tags.map((t) => <span key={t}>{t}</span>)}</div>
-        <div className="pcard-foot">
-          <span className="pcard-date">{p.date}</span>
-          <Links p={p} />
+      <div className="proj-body">
+        {p.slug === 'elementium' && <img className="el-logo" src={images.elLogo} alt="Elementium logo" loading="lazy" />}
+        <span className="proj-kicker">{p.kicker}</span>
+        <h3>{p.title}</h3>
+        <p>{p.body}</p>
+        {p.more && <p>{p.more}</p>}
+        {p.gallery && <Gallery shots={p.gallery} />}
+        <div className="proj-tags">{p.tags.map((t) => <span key={t}>{t}</span>)}</div>
+        <div className="proj-foot">
+          <span className="proj-date">{p.date}</span>
+          <div className="proj-links">
+            {p.links.map((l) => (
+              <a key={l.url} className="pill pill-red pill-sm" href={l.url} target="_blank" rel="noopener" data-magnetic>
+                {l.label} <ArrowUpRight />
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </article>
@@ -80,51 +62,24 @@ function Elementium({ p, hidden }: { p: Project; hidden: boolean }) {
 }
 
 export function Projects() {
-  const [filter, setFilter] = useState<string>('all');
-  const grid = useRef<HTMLDivElement>(null);
-  const shown = (p: Project) => filter === 'all' || (p.cat as readonly string[]).includes(filter);
-  const feature = projects.find((p) => p.title.startsWith('Elementium'))!;
-  const rest = projects.filter((p) => p !== feature);
-
-  useEffect(() => {
-    if (reducedMotion() || !grid.current) return;
-    const cards = grid.current.querySelectorAll('.pcard:not(.hidden)');
-    gsap.fromTo(cards, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.7, stagger: 0.06, ease: 'expo.out', clearProps: 'transform' });
-    ScrollTrigger.refresh();
-  }, [filter]);
-
   return (
-    <section className="projects" id="projects">
+    <section className="sec" id="projects">
       <div className="wrap">
-        <div className="proj-head">
-          <h2 className="sec-title" data-reveal>Things I've built</h2>
-          <div className="filters" role="group" aria-label="Filter projects" data-reveal>
-            {FILTERS.map(([key, label]) => (
-              <button key={key} className={filter === key ? 'active' : ''} aria-pressed={filter === key} onClick={() => setFilter(key)}>{label}</button>
-            ))}
+        <div className="sec-head">
+          <div>
+            <span className="sec-kicker" data-reveal>selected work</span>
+            <h2 className="sec-title" data-reveal>Things I've built</h2>
           </div>
+          <p className="sec-note" data-reveal>Three projects I'm proudest of: one about keeping trains apart, one about making chemistry click, and one about making data truly disappear.</p>
         </div>
-        <div className="proj-grid" ref={grid}>
-          <Elementium p={feature} hidden={!shown(feature)} />
-          {rest.map((p, i) => (
-            <article key={p.title} className={`pcard${shown(p) ? '' : ' hidden'}`}>
-              <div className="pcard-img">
-                <span className="pill pill-mustard pill-sm pcard-num">{String(i + 2).padStart(2, '0')}</span>
-                <img src={p.image} alt="" loading="lazy" />
-              </div>
-              <div className="pcard-body">
-                <span className="pcard-kicker">{p.kicker}</span>
-                <h3>{p.title}</h3>
-                <p className="body">{p.body}</p>
-                <div className="pcard-tags">{p.tags.map((t) => <span key={t}>{t}</span>)}</div>
-                <div className="pcard-foot">
-                  <span className="pcard-date">{p.date}</span>
-                  <Links p={p} />
-                </div>
-              </div>
-            </article>
-          ))}
+
+        {projects.map((p, i) => <ProjectCard key={p.slug} p={p} index={i} flip={i % 2 === 1} />)}
+
+        <div className="lab-head" data-reveal>
+          <h3>In the lab</h3>
+          <p>Ideas on my workbench that aren't built yet. They're labelled honestly so you know what's real.</p>
         </div>
+        {inTheLab.map((p, i) => <ProjectCard key={p.slug} p={p} index={projects.length + i} flip={false} />)}
       </div>
     </section>
   );
