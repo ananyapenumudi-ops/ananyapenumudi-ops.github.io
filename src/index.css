@@ -272,3 +272,6 @@ section { position: relative; }
 
 .say-hi .wavy-letter { display: inline-block; white-space: pre; transform-origin: bottom center; animation: wave 2.6s ease-in-out infinite; animation-delay: calc(var(--i) * -0.22s); }
 @keyframes fadeIn { from { opacity: 0; transform: scale(1.03); } }
+
+.doc-link { display: inline-block; margin-top: 6px; font-size: 13px; font-weight: 700; color: var(--red); border-bottom: 2px solid var(--mustard); line-height: 1.3; }
+.doc-link:hover { color: var(--ink); }

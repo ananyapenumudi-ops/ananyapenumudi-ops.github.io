@@ -76,8 +76,8 @@ export function Projects() {
         {projects.map((p, i) => <ProjectCard key={p.slug} p={p} index={i} flip={i % 2 === 1} />)}
 
         <div className="lab-head" data-reveal>
-          <h3>In the lab</h3>
-          <p>Ideas on my workbench that aren't built yet. They're labelled honestly so you know what's real.</p>
+          <h3>Also on the bench</h3>
+          <p>A bigger idea I'm still designing. It's labelled honestly so you know it isn't built yet.</p>
         </div>
         {inTheLab.map((p, i) => <ProjectCard key={p.slug} p={p} index={projects.length + i} flip={false} />)}
       </div>

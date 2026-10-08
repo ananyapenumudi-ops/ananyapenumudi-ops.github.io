@@ -28,8 +28,8 @@ export default function App() {
       <main>
         <Hero />
         <About />
-        <Scrapbook />
         <Projects />
+        <Scrapbook />
         <Bits />
         <Contact />
       </main>

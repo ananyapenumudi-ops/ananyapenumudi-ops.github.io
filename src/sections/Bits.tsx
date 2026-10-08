@@ -24,6 +24,7 @@ export function Bits() {
                   <h4>{x.role}</h4>
                   <div className="org">{x.org}</div>
                   <p>{x.points[0]}</p>
+                  {'link' in x && x.link && <a className="doc-link" href={x.link.url} target="_blank" rel="noopener">{x.link.label} ↗</a>}
                 </div>
               </div>
             ))}
@@ -55,7 +56,10 @@ export function Bits() {
             {activities.map((a) => (
               <div className={`ticket${'highlight' in a && a.highlight ? ' hl' : ''}`} key={a.title}>
                 <span className="when">{a.year}</span>
-                <div><h4>{a.title}</h4><p>{a.desc}</p></div>
+                <div>
+                  <h4>{a.title}</h4><p>{a.desc}</p>
+                  {'url' in a && a.url && <a className="doc-link" href={a.url} target="_blank" rel="noopener">Certificate ↗</a>}
+                </div>
               </div>
             ))}
             {memberships.map((m) => (
@@ -71,7 +75,10 @@ export function Bits() {
             {certifications.map((c) => (
               <div className="ticket" key={c.title}>
                 <span className="when">{c.date.split(' ').slice(-1)[0]}</span>
-                <div><h4>{c.title}</h4><p>{c.org}</p></div>
+                <div>
+                  <h4>{c.title}</h4><p>{c.org}</p>
+                  {'url' in c && c.url && <a className="doc-link" href={c.url} target="_blank" rel="noopener">Certificate ↗</a>}
+                </div>
               </div>
             ))}
             <h3 style={{ marginTop: 22 }}>I speak</h3>

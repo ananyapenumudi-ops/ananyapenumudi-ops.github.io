@@ -3,8 +3,8 @@ import { scrollToTarget } from '@/lib/motion';
 
 const LINKS = [
   ['about', 'About'],
-  ['scrapbook', 'Scrapbook'],
   ['projects', 'Projects'],
+  ['ideas', 'Ideas'],
   ['bits', 'Resume'],
 ] as const;
 
