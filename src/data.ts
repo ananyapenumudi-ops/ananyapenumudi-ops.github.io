@@ -125,11 +125,11 @@ export const projects: Project[] = [
   {
     slug: 'elementium',
     title: 'Elementium AI',
-    kicker: 'Virtual chemistry lab · 3D + AI',
+    kicker: 'Virtual chemistry lab · 3D + AI · team project',
     date: '2026',
     art: images.flask,
     theme: 'pink',
-    body: 'An intelligent virtual chemistry lab. Explore a 360° 3D lab, drag apparatus onto the bench and run a real-time titration with colour-change chemistry, guided by Elio, a Gemini-powered tutor who catches your mistakes.',
+    body: 'An intelligent virtual chemistry lab I built with my team. Explore a 360° 3D lab, drag apparatus onto the bench and run a real-time titration with colour-change chemistry, guided by Elio, a Gemini-powered tutor who catches your mistakes.',
     more: 'A rule-based engine enforces safe experimental order, an observation notebook records every reading, and results such as water hardness are calculated automatically at the endpoint. Built for a whole class at once.',
     tags: ['React Three Fiber', 'Three.js', 'FastAPI', 'MongoDB Atlas', 'Gemini AI'],
     links: [

@@ -15,7 +15,7 @@ export function About() {
             </p>
             <p data-reveal>
               I trained at <strong>BHEL Bengaluru</strong>, wrote a thesis on <strong>KAVACH</strong>, India's Automatic Train
-              Protection system, and built <strong>Elementium</strong>, a 3D chemistry lab with an AI tutor and its own mascot.
+              Protection system, and built <strong>Elementium</strong> with my team, a 3D chemistry lab with an AI tutor and its own mascot.
             </p>
             <p data-reveal>
               I like serious problems where a wrong answer has consequences, and I like solving them in a way that feels warm and human.
