@@ -2,79 +2,69 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>Ananya Penumudi · Resume (editorial)</title>
-<!-- Editorial variant. Regenerate: chrome --headless=new --no-pdf-header-footer --print-to-pdf=resume/Ananya_Penumudi_Resume_Editorial.pdf resume/editorial.html -->
+<title>Ananya Penumudi · Resume</title>
+<!-- Source for public/Ananya_Penumudi_Resume.pdf (editorial, single column).
+     Regenerate: chrome --headless=new --no-pdf-header-footer --allow-file-access-from-files --print-to-pdf=resume/Ananya_Penumudi_Resume_Editorial.pdf resume/editorial.html -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
 <style>
   :root { --paper: #ebe8df; --ink: #161616; --soft: #3b3a37; }
   @page { size: A4; margin: 0; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  body { font-family: 'Montserrat', Arial, sans-serif; font-size: 8.4pt; line-height: 1.45; color: var(--ink); background: var(--paper); }
+  body { font-family: 'Montserrat', Arial, sans-serif; font-size: 8.4pt; line-height: 1.42; color: var(--ink); background: var(--paper); }
   a { color: var(--ink); text-decoration: none; }
-  .page { width: 210mm; height: 297mm; padding: 12mm 13mm 11mm; position: relative; overflow: hidden; background: var(--paper); page-break-after: always; }
-  .page:last-child { page-break-after: auto; }
+  html, body { background: var(--paper); }
+  .page { width: 210mm; padding: 12mm 15mm 15mm; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 
   /* masthead */
-  .name { font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 66pt; line-height: 1; letter-spacing: -0.035em; text-align: center; white-space: nowrap; transform: scaleY(1.55); transform-origin: top center; margin-bottom: 15mm; }
-  .strap { display: flex; justify-content: space-between; font-size: 9.6pt; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; }
-
-  /* intro row */
-  .intro { display: grid; grid-template-columns: 1fr 52mm 1fr; gap: 9mm; margin-top: 5mm; align-items: center; }
+  .name { font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 60pt; line-height: 1; letter-spacing: -0.035em; text-align: center; white-space: nowrap; transform: scaleY(1.55); transform-origin: top center; margin-bottom: 14mm; }
+  .strap { display: flex; justify-content: space-between; font-size: 9.4pt; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; }
+  .intro { display: grid; grid-template-columns: 1fr 44mm 1fr; gap: 8mm; margin-top: 5mm; align-items: center; }
   .blurb { font-size: 9.2pt; line-height: 1.6; color: var(--soft); }
   .blurb b { color: var(--ink); font-weight: 600; }
-  .photo { width: 52mm; height: 58mm; object-fit: cover; object-position: center 18%; filter: grayscale(1) contrast(1.08); display: block; }
-  .contact div { padding: 2.2mm 0 1.6mm; border-bottom: 1.4px solid var(--ink); }
-  .contact div + div { margin-top: 3mm; }
-  .contact b { display: block; font-size: 8.6pt; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
-  .contact span { font-size: 8.4pt; color: var(--soft); }
+  .photo { width: 44mm; height: 49mm; object-fit: cover; object-position: center 20%; filter: grayscale(1) contrast(1.05); display: block; }
+  .contact div { padding: 1.6mm 0 1.2mm; border-bottom: 1.4px solid var(--ink); }
+  .contact div + div { margin-top: 2.2mm; }
+  .contact b { display: block; font-size: 8.4pt; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+  .contact span { font-size: 8.3pt; color: var(--soft); }
   .contact span::before { content: '['; } .contact span::after { content: ']'; }
 
-  /* section titles */
-  h2 { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 13pt; letter-spacing: 0.03em; text-transform: uppercase; transform: scaleY(1.35); transform-origin: bottom left; margin: 6mm 0 3.2mm; line-height: 1; }
-  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7mm; }
-  .job h3, .item h3 { font-size: 8.8pt; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; line-height: 1.3; }
-  .pos { font-style: italic; font-size: 9pt; margin: 0.6mm 0 1.8mm; color: var(--soft); }
-  .desc { color: var(--soft); font-size: 8.1pt; }
-  .more { display: inline-block; margin-top: 1.6mm; font-size: 7.8pt; font-weight: 600; }
+  /* single-column sections */
+  h2 { break-after: avoid; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 13pt; letter-spacing: 0.03em; text-transform: uppercase; transform: scaleY(1.35); transform-origin: bottom left; line-height: 1; margin: 5mm 0 3mm; }
+  .rule { break-after: avoid; height: 1.2px; background: var(--ink); margin: -1.4mm 0 2.8mm; }
+  .entry { margin-bottom: 2.2mm; break-inside: avoid; }
+  .top { display: flex; justify-content: space-between; align-items: baseline; gap: 4mm; }
+  .entry h3 { font-size: 9pt; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; }
+  .when { font-weight: 700; font-size: 9pt; white-space: nowrap; }
+  .pos { font-style: italic; font-size: 8.8pt; color: var(--soft); margin-top: 0.2mm; }
+  ul { margin: 1mm 0 0 4.2mm; color: var(--soft); }
+  li { margin-bottom: 0.5mm; }
+  .more { display: inline-block; font-size: 8pt; font-weight: 600; font-style: normal; color: var(--ink); }
   .more::before { content: '⟶ '; }
+  .more + .more { margin-left: 3mm; }
+  .pos .more { margin-left: 3mm; }
+  .skills { display: grid; grid-template-columns: 40mm 1fr; gap: 1.2mm 4mm; }
+  .skills b { font-weight: 600; text-transform: uppercase; font-size: 8pt; letter-spacing: 0.04em; }
+  .skills span { color: var(--soft); }
+  .list li { margin-bottom: 0.6mm; }
+  .list b { color: var(--ink); }
 
-  .row3 { display: grid; grid-template-columns: 30mm 1fr 66mm; gap: 7mm; }
-  ul.plain { list-style: none; }
-  ul.plain li { padding: 0.6mm 0; font-size: 9pt; }
-  ul.dots { margin-left: 4mm; }
-  ul.dots li { padding: 0.3mm 0; font-size: 8.6pt; }
-  .edu { display: grid; grid-template-columns: 1fr auto; gap: 0 4mm; margin-bottom: 2mm; }
-  .edu h3 { font-size: 8.2pt; font-weight: 500; text-transform: uppercase; letter-spacing: 0.02em; }
-  .edu .yrs { font-weight: 700; font-size: 9.6pt; white-space: nowrap; }
-  .edu small { grid-column: 1; font-size: 7.8pt; color: var(--soft); }
-  .edu small::before { content: '( '; } .edu small::after { content: ' )'; }
-
-  .row2 { display: grid; grid-template-columns: 52mm 1fr; gap: 7mm; }
-  .ref p { font-size: 8.2pt; text-transform: uppercase; letter-spacing: 0.03em; line-height: 1.75; }
-  .ref p i { font-style: italic; text-transform: none; }
-
-  /* page two */
   .head2 { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1.4px solid var(--ink); padding-bottom: 3mm; }
   .head2 .mini { font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 22pt; letter-spacing: -0.02em; transform: scaleY(1.4); transform-origin: bottom left; line-height: 1; }
   .head2 span { font-size: 8.4pt; letter-spacing: 0.06em; text-transform: uppercase; }
-  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm 9mm; }
-  .item .pos { margin-bottom: 1.2mm; }
-  .item { break-inside: avoid; }
+  footer { position: fixed; left: 15mm; right: 15mm; bottom: 6mm; display: flex; justify-content: space-between; font-size: 7.4pt; letter-spacing: 0.06em; text-transform: uppercase; color: var(--soft); }
   footer a { font-weight: 600; color: var(--ink); }
-  footer { position: absolute; left: 13mm; right: 13mm; bottom: 7mm; display: flex; justify-content: space-between; font-size: 7.4pt; letter-spacing: 0.06em; text-transform: uppercase; color: var(--soft); }
 </style>
 </head>
 <body>
 
-<!-- ============ PAGE 1 ============ -->
 <div class="page">
   <div class="name">Ananya Penumudi</div>
-  <div class="strap"><span>Embedded &amp; IoT Engineer</span><span>B.Tech CSE (IoT) · Hyderabad</span></div>
+  <div class="strap"><span>Embedded &amp; IoT Engineer</span><span>B.Tech CSE (IoT) · Class of 2027</span></div>
 
   <div class="intro">
-    <p class="blurb">B.Tech CSE (IoT) student building <b>embedded systems, AI-powered devices and safety-critical software</b>. Industrial trainee at <b>BHEL Bengaluru</b> and author of a systems-engineering thesis on <b>KAVACH</b>, India’s Automatic Train Protection system. CGPA 8.92.</p>
-    <img class="photo" src="../public/photo.jpg" alt="Ananya Penumudi" />
+    <p class="blurb">B.Tech CSE (IoT) student, graduating in <b>2027</b>, building <b>embedded systems, AI-powered devices and safety-critical software</b>. Industrial trainee at <b>BHEL Bengaluru</b> and author of a systems-engineering thesis on <b>KAVACH</b>, India’s Automatic Train Protection system.</p>
+    <img class="photo" src="photo-formal.jpg" alt="Ananya Penumudi" />
     <div class="contact">
       <div><b>Portfolio</b><a href="https://ananyapenumudi-ops.github.io/"><span>ananyapenumudi-ops.github.io</span></a></div>
       <div><b>Email</b><a href="mailto:ananyapenumudi@gmail.com"><span>ananyapenumudi@gmail.com</span></a></div>
@@ -83,135 +73,116 @@
     </div>
   </div>
 
-  <h2>Work Experience</h2>
-  <div class="grid3">
-    <div class="job">
-      <h3>BHEL Bengaluru | 2026</h3>
-      <div class="pos">Industrial Trainee · Jun – Jul</div>
-      <p class="desc">Trained at the Solar Business Division on manufacturing, production workflows, QA and system integration. Studied railway signalling and KAVACH through technical discussions and documentation.</p>
-      <a class="more" href="https://drive.google.com/file/d/16mDEpE9koYvorrJpGuh5ZN004jtG2wrX/view">Certificate</a>
-    </div>
-    <div class="job">
-      <h3>Alfago | 2026</h3>
-      <div class="pos">Software Engineering Intern · Jan</div>
-      <p class="desc">Built tax-lot based profit-and-loss calculations and backend transaction logic for a Position Tracker covering transaction- and portfolio-level PnL.</p>
-      <a class="more" href="https://drive.google.com/file/d/1Gtoaz6f3XO0bQzgjHT4G-XAV1L3BHDb_/view">Certificate</a>
-    </div>
-    <div class="job">
-      <h3>Kartgen Infotech | 2025</h3>
-      <div class="pos">Operations Intern · Jan – Apr</div>
-      <p class="desc">Remote internship in the Business Development Department: process coordination, stakeholder communication and day-to-day operations.</p>
-      <a class="more" href="https://ananyapenumudi-ops.github.io/docs/Kartgen_Letter_of_Recommendation.pdf">Letter of recommendation</a>
-    </div>
+  <h2>Education</h2><div class="rule"></div>
+  <div class="entry"><div class="top"><h3>VNR Vignana Jyothi Institute of Engineering &amp; Technology</h3><span class="when">2023 – 2027 (expected)</span></div>
+    <div class="pos">B.Tech, Computer Science &amp; Engineering (IoT) · JNTUH · CGPA 8.92 / 10 (till Semester VI)</div></div>
+  <div class="entry"><div class="top"><h3>Sri Chaitanya Junior College</h3><span class="when">2021 – 2023</span></div>
+    <div class="pos">Intermediate, Telangana State Board · 97.4%</div></div>
+  <div class="entry"><div class="top"><h3>Bharatiya Vidya Bhavan’s Public School</h3><span class="when">2021</span></div>
+    <div class="pos">High School, CBSE · GPA 9.38 / 10</div></div>
+
+  <h2>Work Experience</h2><div class="rule"></div>
+  <div class="entry">
+    <div class="top"><h3>Bharat Heavy Electricals Limited (BHEL), Bengaluru</h3><span class="when">Jun – Jul 2026</span></div>
+    <div class="pos">Industrial Trainee <a class="more" href="https://drive.google.com/file/d/16mDEpE9koYvorrJpGuh5ZN004jtG2wrX/view">Internship certificate</a></div>
+    <ul>
+      <li>Trained at the Solar Business Division on manufacturing, production workflows, quality assurance and system integration in a Government of India PSU.</li>
+      <li>Studied railway signalling and KAVACH through technical discussions and documentation.</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="top"><h3>Alfago</h3><span class="when">Jan 2026</span></div>
+    <div class="pos">Software Engineering Intern · Position Tracker <a class="more" href="https://drive.google.com/file/d/1Gtoaz6f3XO0bQzgjHT4G-XAV1L3BHDb_/view">Internship certificate</a></div>
+    <ul><li>Built tax-lot based profit-and-loss calculations and backend transaction logic for a tracker covering transaction- and portfolio-level PnL.</li></ul>
+  </div>
+  <div class="entry">
+    <div class="top"><h3>Kartgen Infotech LLP</h3><span class="when">Jan – Apr 2025</span></div>
+    <div class="pos">Operations Intern (remote) <a class="more" href="https://ananyapenumudi-ops.github.io/docs/Kartgen_Letter_of_Recommendation.pdf">Letter of recommendation</a></div>
+    <ul><li>Supported business development and operations: process coordination and stakeholder communication, under Shrivatsa Malviya.</li></ul>
   </div>
 
-  <div class="row3">
-    <div>
-      <h2>Languages</h2>
-      <ul class="plain"><li>English</li><li>Hindi</li><li>Telugu</li></ul>
-    </div>
-    <div>
-      <h2>Skills</h2>
-      <ul class="dots">
-        <li>Embedded C/C++, Python, Java, JS</li>
-        <li>Arduino, ESP32, SPI · I2C · PWM, BLE</li>
-        <li>Computer vision &amp; edge inference</li>
-        <li>Functional safety, V&amp;V, traceability</li>
-        <li>React Three Fiber, FastAPI, MongoDB</li>
-        <li>AWS, CI/CD, Tableau, Figma</li>
-      </ul>
-    </div>
-    <div>
-      <h2>Education</h2>
-      <div class="edu"><h3>VNR Vignana Jyothi Inst. of Engg. &amp; Tech.</h3><span class="yrs">2023 – now</span><small>B.Tech CSE (IoT) · CGPA 8.92</small></div>
-      <div class="edu"><h3>Sri Chaitanya Junior College</h3><span class="yrs">2021 – 2023</span><small>Intermediate · 97.4%</small></div>
-      <div class="edu"><h3>Bharatiya Vidya Bhavan’s Public School</h3><span class="yrs">2021</span><small>CBSE · GPA 9.38</small></div>
-    </div>
+  <h2>Featured Projects</h2><div class="rule"></div>
+  <div class="entry">
+    <div class="top"><h3>Elementium AI: virtual chemistry lab</h3><span class="when">2026</span></div>
+    <div class="pos">React Three Fiber · FastAPI · MongoDB Atlas · Gemini <a class="more" href="https://github.com/Ananyapenumudi/elementium">GitHub</a></div>
+    <ul>
+      <li>Built a 360° 3D lab with drag-and-drop apparatus, real-time titration and colour-change chemistry.</li>
+      <li>Added a Gemini-powered tutor and a rule-based engine that catches unsafe or out-of-order steps; the lab notebook fills itself in.</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="top"><h3>Beyond Collision Prevention: KAVACH thesis</h3><span class="when">Jun 2026</span></div>
+    <div class="pos">Systems-engineering research · BHEL guidance <a class="more" href="https://drive.google.com/file/d/1GO4mDjF_dgNs_bGwBQmBrbEVATUGQPoT/view">Thesis report</a><a class="more" href="https://github.com/Ananyapenumudi/kavach-mode-simulator">Simulator</a><a class="more" href="https://github.com/Ananyapenumudi/KAVACH-Digital-Twin">Digital twin</a></div>
+    <ul>
+      <li>Analysed the architecture, operating modes, communication framework and functional safety of India’s Automatic Train Protection system.</li>
+      <li>Built an interactive simulator of KAVACH’s modes of operation and a digital twin.</li>
+    </ul>
   </div>
 
-  <h2>Featured Projects</h2>
-  <div class="grid2">
-    <div class="item">
-      <h3>Elementium AI | 2026</h3>
-      <div class="pos">3D virtual chemistry lab · React Three Fiber, FastAPI, Gemini</div>
-      <p class="desc">A 360° 3D lab with drag-and-drop apparatus and real-time titration. A Gemini-powered tutor and a rule-based engine catch unsafe or out-of-order steps, and the lab notebook fills itself in.</p>
-      <a class="more" href="https://github.com/Ananyapenumudi/elementium">GitHub</a>
-    </div>
-    <div class="item">
-      <h3>KAVACH Thesis | 2026</h3>
-      <div class="pos">Systems-engineering research · BHEL guidance</div>
-      <p class="desc">Analysis of the architecture, operating modes, communication framework and functional safety of India’s Automatic Train Protection system, with a mode simulator and a digital twin.</p>
-      <a class="more" href="https://drive.google.com/file/d/1GO4mDjF_dgNs_bGwBQmBrbEVATUGQPoT/view">Thesis report</a>
-      <a class="more" style="margin-left:4mm" href="https://github.com/Ananyapenumudi/kavach-mode-simulator">Simulator</a>
-    </div>
+
+  <h2>More Projects</h2><div class="rule"></div>
+  <div class="entry">
+    <div class="top"><h3>Smart AI Wheelchair System</h3><span class="when">Jan 2026</span></div>
+    <div class="pos">IoT + edge AI <a class="more" href="https://drive.google.com/file/d/1Ps5_0vF7PTnuPnImKt-Vq9tO0a4qZFzd/view">Technical report</a></div>
+    <ul><li>Vision-based obstacle detection with automatic braking; GPS geofencing, caregiver alerts and sensor fusion across camera, IMU and proximity sensors.</li></ul>
   </div>
-  <footer><span>Ananya Penumudi</span><a href="https://ananyapenumudi-ops.github.io/">Portfolio ⟶ ananyapenumudi-ops.github.io</a><span>01 / 02</span></footer>
-</div>
-
-<!-- ============ PAGE 2 ============ -->
-<div class="page">
-  <div class="head2"><div class="mini">Ananya Penumudi</div><span>Projects &amp; more</span></div>
-
-  <h2>More Projects</h2>
-  <div class="grid2">
-    <div class="item">
-      <h3>Smart AI Wheelchair | 2026</h3>
-      <div class="pos">IoT + edge AI</div>
-      <p class="desc">Vision-based obstacle detection with automatic braking, GPS geofencing, caregiver alerts and sensor fusion across camera, IMU and proximity sensors.</p>
-      <a class="more" href="https://drive.google.com/file/d/1Ps5_0vF7PTnuPnImKt-Vq9tO0a4qZFzd/view">Technical report</a>
-    </div>
-    <div class="item">
-      <h3>Secure Data Wiping | 2025</h3>
-      <div class="pos">AI + cybersecurity · team project</div>
-      <p class="desc">Binary-overwrite data sanitisation with cryptographic verification of every wipe and AI-based anomaly detection.</p>
-      <a class="more" href="https://github.com/VedarthamSaaket/oblvn">GitHub</a>
-    </div>
-    <div class="item">
-      <h3>Syncope | 2025</h3>
-      <div class="pos">Wearable IoT</div>
-      <p class="desc">A wearable that detects falls from motion-sensor data and alerts caregivers automatically.</p>
-      <a class="more" href="https://docs.google.com/document/d/1O49PiB31y-lA61xj7J8HDAKzsdVG4eQ0/view">Documentation</a>
-    </div>
-    <div class="item">
-      <h3>FocusFlow | 2025</h3>
-      <div class="pos">AI + web</div>
-      <p class="desc">An ADHD-friendly productivity platform with mood tracking, journaling, facial-expression analysis and gamified focus tools.</p>
-      <a class="more" href="https://github.com/Ananyapenumudi/neurowave">GitHub</a>
-    </div>
-    <div class="item">
-      <h3>Auralyn | 2025 – now</h3>
-      <div class="pos">Wellness wearable · in design</div>
-      <p class="desc">Designing an ESP32-S3 + BLE wearable that pairs biometric sensing with mood analysis, with apps for the wearer, therapist and family.</p>
-    </div>
-    <div class="item">
-      <h3>Earlier web projects | 2023 – 24</h3>
-      <div class="pos">Ideavoid · Cheugy · Syndicate</div>
-      <p class="desc">A startup-idea validation platform, a stress and self-care app, and a gamified film-based learning platform.</p>
-      <a class="more" href="https://github.com/Ananyapenumudi/cheugy">Cheugy on GitHub</a>
-    </div>
+  <div class="entry">
+    <div class="top"><h3>AI-Enhanced Secure Data Wiping Platform</h3><span class="when">Nov 2025</span></div>
+    <div class="pos">AI + cybersecurity · team project <a class="more" href="https://github.com/VedarthamSaaket/oblvn">GitHub</a></div>
+    <ul><li>Binary-overwrite data sanitisation with cryptographic verification of every wipe and AI-based anomaly detection.</li></ul>
+  </div>
+  <div class="entry">
+    <div class="top"><h3>Syncope: fall detection &amp; alert system</h3><span class="when">Aug 2025</span></div>
+    <div class="pos">Wearable IoT <a class="more" href="https://docs.google.com/document/d/1O49PiB31y-lA61xj7J8HDAKzsdVG4eQ0/view">Documentation</a></div>
+    <ul><li>A wearable that detects falls from motion-sensor data and alerts caregivers automatically.</li></ul>
+  </div>
+  <div class="entry">
+    <div class="top"><h3>FocusFlow: ADHD-friendly productivity platform</h3><span class="when">Apr 2025</span></div>
+    <div class="pos">AI + web <a class="more" href="https://github.com/Ananyapenumudi/neurowave">GitHub</a></div>
+    <ul><li>Mood tracking, journaling, facial-expression analysis and gamified focus tools.</li></ul>
+  </div>
+  <div class="entry">
+    <div class="top"><h3>Auralyn: emotional-wellness wearable</h3><span class="when">2025 – now</span></div>
+    <div class="pos">IoT + AI + healthcare · in design</div>
+    <ul><li>Designing an ESP32-S3 + BLE wearable that pairs biometric sensing with mood analysis, with apps for the wearer, therapist and family.</li></ul>
+  </div>
+  <div class="entry">
+    <div class="top"><h3>Earlier web projects</h3><span class="when">2023 – 2024</span></div>
+    <ul>
+      <li><b>Ideavoid</b>: startup-idea validation platform with peer feedback and market-viability assessment.</li>
+      <li><b>Cheugy</b>: wellness app for stress management and self-care. <a class="more" href="https://github.com/Ananyapenumudi/cheugy">GitHub</a></li>
+      <li><b>Syndicate</b>: gamified learning platform built around films, documentaries, quizzes and discussions.</li>
+    </ul>
   </div>
 
-  <div class="grid2">
-    <div>
-      <h2>Certifications</h2>
-      <div class="item" style="margin-bottom:3mm"><h3>DevOps with Real-Time Practical Exposure</h3><div class="pos">Brainovision · AICTE approved · Jul – Nov 2025</div></div>
-      <div class="item" style="margin-bottom:3mm"><h3>Tableau Certified Data Analyst Training</h3><div class="pos">Udemy · 59 hours · Jun 2024</div><a class="more" href="https://www.udemy.com/certificate/UC-f3417426-3a7c-4bad-aeaf-892ec4fb1019/">Certificate</a></div>
-      <div class="item"><h3>RoboJAM Robotics Workshop</h3><div class="pos">Convergence 2K23, VNRVJIET · Dec 2023</div></div>
-    </div>
-    <div>
-      <h2>Awards &amp; Activities</h2>
-      <ul class="dots">
-        <li><b>2nd Prize, IDEATHON 2023</b>, VNRVJIET · <a href="https://drive.google.com/file/d/1jPCXMfigmvvXgMQub1-DiE9gDc0QkC1H/view"><b>Certificate</b></a></li>
-        <li><b>Smart India Hackathon 2025</b>: solution design, prototyping and technical documentation</li>
-        <li>24-hour Hackathon, Convergence 2025 · <a href="https://drive.google.com/file/d/1ziS1uKQ0UtFztXfHGNv8Hq73acEiVBjp/view"><b>Certificate</b></a></li>
-        <li>24-hour Hackathon, DEMUX 2024, BVRIT · <a href="https://drive.google.com/file/d/1IDa8FzrdquvvZvrPapB-Qs3R_pxVY9Fd/view"><b>Certificate</b></a></li>
-        <li>National Conclave 2025, CBIT · <a href="https://drive.google.com/file/d/1jPLxF_J3GC9K4ZC5wNVo5O-M-0838fr_/view"><b>Certificate</b></a></li>
-        <li>Member, Computer Society of India, VNRVJIET (2023 – now): organises workshops, coding events and competitions</li>
-        <li>Member, Art of Living Cultural Club (2023 – now): events and volunteering</li>
-      </ul>
-    </div>
+  <h2>Technical Skills</h2><div class="rule"></div>
+  <div class="skills">
+    <b>IoT &amp; embedded</b><span>Arduino, ESP32, sensor integration (SPI, I2C, PWM), BLE, GPS, GSM, accelerometers</span>
+    <b>Programming</b><span>C, C++, Python, Java, JavaScript, R, HTML, CSS, data structures &amp; algorithms</span>
+    <b>AI &amp; data</b><span>Computer vision, edge inference, mood detection, anomaly detection, Tableau</span>
+    <b>Systems engineering</b><span>Requirements analysis, functional safety, verification &amp; validation, system architecture, traceability</span>
+    <b>Web, cloud &amp; tools</b><span>React Three Fiber, FastAPI, MongoDB, MySQL, AWS, CI/CD, Figma, AutoCAD, StarUML</span>
+    <b>Languages</b><span>English, Hindi, Telugu</span>
   </div>
-  <footer><span>Ananya Penumudi</span><a href="https://ananyapenumudi-ops.github.io/">Portfolio ⟶ ananyapenumudi-ops.github.io</a><span>02 / 02</span></footer>
+
+  <h2>Certifications</h2><div class="rule"></div>
+  <ul class="list">
+    <li><b>DevOps with Real-Time Practical Exposure</b>, Brainovision (AICTE approved), VNRVJIET · Jul – Nov 2025</li>
+    <li><b>Tableau Certified Data Analyst Training</b>, Udemy (59 hours) · Jun 2024 · <a class="more" href="https://www.udemy.com/certificate/UC-f3417426-3a7c-4bad-aeaf-892ec4fb1019/">Certificate</a></li>
+    <li><b>RoboJAM Robotics Workshop</b>, Convergence 2K23, VNRVJIET · Dec 2023</li>
+  </ul>
+
+  <h2>Awards &amp; Activities</h2><div class="rule"></div>
+  <ul class="list">
+    <li><b>2nd Prize, IDEATHON 2023</b>, VNRVJIET · <a class="more" href="https://drive.google.com/file/d/1jPCXMfigmvvXgMQub1-DiE9gDc0QkC1H/view">Certificate</a></li>
+    <li><b>Smart India Hackathon 2025</b>: solution design, prototyping and technical documentation</li>
+    <li>24-hour Hackathon, Convergence 2025, VNRVJIET · <a class="more" href="https://drive.google.com/file/d/1ziS1uKQ0UtFztXfHGNv8Hq73acEiVBjp/view">Certificate</a></li>
+    <li>24-hour Hackathon DEMUX 2024, BVRIT · <a class="more" href="https://drive.google.com/file/d/1IDa8FzrdquvvZvrPapB-Qs3R_pxVY9Fd/view">Certificate</a></li>
+    <li>National Conclave 2025, CBIT · <a class="more" href="https://drive.google.com/file/d/1jPLxF_J3GC9K4ZC5wNVo5O-M-0838fr_/view">Certificate</a></li>
+    <li>Member, Computer Society of India (VNRVJIET chapter) and Art of Living Cultural Club, 2023 – present</li>
+  </ul>
+
+  <footer><span>Ananya Penumudi</span><a href="https://ananyapenumudi-ops.github.io/">Portfolio ⟶ ananyapenumudi-ops.github.io</a><span>B.Tech CSE (IoT) · Class of 2027</span></footer>
 </div>
 </body>
 </html>

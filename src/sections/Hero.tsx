@@ -59,11 +59,7 @@ export function Hero() {
         <div className="tile t-e"><img src={images.daisy} alt="" /></div>
         <div className="tile t-f tilt-r"><img src={images.cat} alt="" /></div>
         <div className="tile t-g"><img src={images.train} alt="" /></div>
-        <div className="tile t-h photo-tile tilt-r">
-          <img src="./photo.jpg" alt="Portrait of Ananya Penumudi" onError={(e) => e.currentTarget.remove()} />
-          <span className="initials">AP</span>
-          <span className="pill pill-mustard pill-sm tag">B.Tech CSE–IoT</span>
-        </div>
+        <div className="tile t-h tilt-r"><img src={images.tomato} alt="" /></div>
       </div>
 
       <div className="ribbon" aria-hidden="true">

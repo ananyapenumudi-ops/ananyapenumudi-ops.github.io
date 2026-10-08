@@ -16,7 +16,6 @@ export function Scrapbook() {
       <div className="flex justify-center">
         <HoverExpand_001 images={ideas} initialActive={0} />
       </div>
-      <p className="scrap-credit">Hover gallery adapted from <a href="https://skiper-ui.com" target="_blank" rel="noopener">Skiper UI</a></p>
     </section>
   );
 }

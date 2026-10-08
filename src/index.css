@@ -107,10 +107,6 @@ body.cursor-on .cursor-dot, body.cursor-on .cursor-ring { opacity: 1; }
 .caret { animation: blink 1s steps(1) infinite; color: var(--red); }
 @keyframes blink { 50% { opacity: 0; } }
 .hero-ctas { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; justify-content: center; }
-.photo-tile { background: var(--teal); display: grid; place-items: center; }
-.photo-tile > img { position: absolute; inset: 0; z-index: 1; object-position: center 18%; }
-.photo-tile .initials { font-family: var(--groovy); font-size: clamp(56px, 7vw, 84px); color: var(--mustard); line-height: 1; transform: rotate(-6deg); }
-.photo-tile .tag { position: absolute; left: 10px; bottom: 10px; z-index: 2; }
 .t-title .star:first-child { left: 6%; top: 6%; }
 .t-title .star:nth-child(2) { right: 8%; bottom: 18%; color: var(--red); animation-delay: -1.4s; }
 .star { position: absolute; z-index: 3; color: var(--mustard); pointer-events: none; animation: twinkle 3s ease-in-out infinite; }
@@ -156,8 +152,6 @@ section { position: relative; }
 .scrap .sec-title { color: var(--mustard); }
 .scrap .sec-kicker { color: var(--pink); }
 .scrap .sec-note { color: rgba(253, 246, 234, 0.8); }
-.scrap-credit { margin-top: 18px; text-align: center; font-size: 12px; opacity: 0.65; }
-.scrap-credit a { text-decoration: underline; }
 
 /* ---------- Projects ---------- */
 .proj { position: relative; display: grid; grid-template-columns: 0.85fr 1.15fr; border: 3px solid var(--ink); border-radius: 8px; overflow: hidden; background: var(--cream); margin-bottom: 34px; transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease); }
