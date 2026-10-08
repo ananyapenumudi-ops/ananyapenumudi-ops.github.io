@@ -220,6 +220,7 @@ section { position: relative; }
 
 /* ---------- Reveal defaults (JS animates these in) ---------- */
 .js [data-reveal] { opacity: 0; transform: translateY(36px) rotate(-1deg); }
+.js .poster > * { opacity: 0; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 960px) {
