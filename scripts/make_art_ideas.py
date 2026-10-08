@@ -39,41 +39,51 @@ svg(
     f'<path d="M330 90 {STAR}" fill="#f2b632"/>',
 )
 
-# KAVACH Jr.: a wooden toy train
-wheels = "".join(f'<circle cx="{x}" cy="352" r="22" fill="#1b1b1b"/><circle cx="{x}" cy="352" r="8" fill="#f2b632"/>' for x in (95, 165, 245, 315))
-puffs = "".join(f'<circle cx="{x}" cy="{y}" r="{r}" fill="#fdf6ea"/>' for x, y, r in ((95, 160, 22), (118, 122, 30), (156, 86, 36), (206, 62, 26)))
-ties = "".join(f'<rect x="{x}" y="372" width="10" height="20" fill="#8a6a48"/>' for x in range(10, 400, 40))
+# Pocket Museum: one (1) sock, displayed with great seriousness
 svg(
-    "toytrain",
-    "",
-    f'<rect width="400" height="500" fill="#bfe0e6"/>{puffs}'
-    f'<rect x="0" y="380" width="400" height="120" fill="#8fa37a"/>{ties}<path d="M0 382 H400" stroke="#5a4632" stroke-width="8"/>'
-    '<rect x="200" y="250" width="160" height="90" rx="12" fill="#f2b632" stroke="#1b1b1b" stroke-width="5"/>'
-    '<rect x="225" y="270" width="40" height="34" rx="6" fill="#fdf6ea" stroke="#1b1b1b" stroke-width="4"/><rect x="290" y="270" width="40" height="34" rx="6" fill="#fdf6ea" stroke="#1b1b1b" stroke-width="4"/>'
-    '<rect x="50" y="240" width="140" height="100" rx="12" fill="#d81e2c" stroke="#1b1b1b" stroke-width="5"/>'
-    '<rect x="120" y="190" width="70" height="60" rx="8" fill="#d81e2c" stroke="#1b1b1b" stroke-width="5"/><rect x="70" y="192" width="28" height="50" fill="#1b1b1b"/>'
-    + eyes(80, 120, 285, 9)
-    + '<path d="M88 312 Q100 322 112 312" stroke="#1b1b1b" stroke-width="4" fill="none" stroke-linecap="round"/>'
-    '<rect x="190" y="300" width="12" height="10" fill="#1b1b1b"/>'
-    + wheels
-    + '<circle cx="38" cy="290" r="10" fill="#f6c22a" stroke="#1b1b1b" stroke-width="3"/>',
+    "museum",
+    '<pattern id="s" width="10" height="44" patternUnits="userSpaceOnUse"><rect width="10" height="44" fill="#d81e2c"/><rect width="10" height="22" fill="#c4161f"/></pattern>',
+    '<rect width="400" height="500" fill="url(#s)"/>'
+    '<path d="M120 0 L60 330 H340 L280 0Z" fill="#fdf6ea" opacity=".18"/>'
+    '<rect x="110" y="330" width="180" height="170" fill="#fdf6ea" stroke="#1b1b1b" stroke-width="6"/><rect x="95" y="315" width="210" height="26" fill="#ebdcc2" stroke="#1b1b1b" stroke-width="6"/>'
+    '<path d="M170 170 h50 v95 q0 18 18 28 l20 12 q16 10 6 28 q-8 14 -26 6 l-48 -26 q-20 -12 -20 -36Z" fill="#f2b632" stroke="#1b1b1b" stroke-width="6" stroke-linejoin="round"/>'
+    '<path d="M170 190 h50 M170 210 h50" stroke="#d81e2c" stroke-width="8"/>'
+    '<circle cx="186" cy="245" r="5" fill="#1b1b1b"/><circle cx="206" cy="245" r="5" fill="#1b1b1b"/><path d="M188 262 Q196 268 204 262" stroke="#1b1b1b" stroke-width="4" fill="none" stroke-linecap="round"/>'
+    '<rect x="140" y="380" width="120" height="58" rx="4" fill="#fdf6ea" stroke="#1b1b1b" stroke-width="4"/>'
+    '<text x="200" y="404" text-anchor="middle" font-family="Georgia, serif" font-weight="700" font-size="15" fill="#1b1b1b">EXHIBIT 01</text>'
+    '<text x="200" y="424" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="12" fill="#4b4339">one (1) sock, c. 2026</text>'
+    f'<path d="M70 90 {STAR}" fill="#f2b632"/><path d="M320 140 {STAR}" fill="#fdf6ea"/>',
 )
 
-# KAVACH-Lite: a level-crossing barrier on duty
-arm = "".join(f'<rect x="{x}" y="0" width="30" height="26" fill="{c}"/>' for x, c in zip(range(0, 300, 30), ["#d81e2c", "#fdf6ea"] * 5))
+# Fridge Chef: a tomato in a chef hat
 svg(
-    "crossing",
-    '<pattern id="s" width="50" height="10" patternUnits="userSpaceOnUse"><rect width="50" height="10" fill="#cdd8b8"/><rect width="25" height="10" fill="#8fa37a"/></pattern>',
+    "tomato",
+    '<pattern id="c" width="60" height="60" patternUnits="userSpaceOnUse"><rect width="60" height="60" fill="#e3ead6"/><rect width="30" height="30" fill="#cdd8b8"/><rect x="30" y="30" width="30" height="30" fill="#cdd8b8"/></pattern>',
+    '<rect width="400" height="500" fill="url(#c)"/>'
+    '<circle cx="200" cy="320" r="120" fill="#e23b3b" stroke="#1b1b1b" stroke-width="6"/>'
+    '<path d="M150 230 q50 -30 100 0 q-25 10 -50 0 q-25 10 -50 0Z" fill="#4f8a3c" stroke="#1b1b1b" stroke-width="4"/>'
+    '<path d="M130 210 q-30 -60 30 -70 q20 -50 80 -20 q60 -10 50 50 q20 30 -10 40 h-150 q-20 -10 0 0Z" fill="#fdf6ea" stroke="#1b1b1b" stroke-width="6"/>'
+    '<rect x="135" y="205" width="130" height="34" rx="6" fill="#fdf6ea" stroke="#1b1b1b" stroke-width="6"/>'
+    + eyes(165, 235, 310, 13)
+    + '<path d="M175 352 Q200 375 225 352" stroke="#1b1b1b" stroke-width="5" fill="none" stroke-linecap="round"/>'
+    '<circle cx="135" cy="345" r="14" fill="#f4a9bb" opacity=".8"/><circle cx="265" cy="345" r="14" fill="#f4a9bb" opacity=".8"/>'
+    '<path d="M300 380 L360 300" stroke="#8a6a48" stroke-width="12" stroke-linecap="round"/><ellipse cx="368" cy="288" rx="18" ry="26" transform="rotate(38 368 288)" fill="#8a6a48"/>'
+    f'<path d="M60 100 {STAR}" fill="#f2b632"/>',
+)
+
+# Mixtape Posters: a vinyl record with a happy label
+grooves = "".join(f'<circle cx="200" cy="260" r="{r}" fill="none" stroke="#3a3a3a" stroke-width="2"/>' for r in range(70, 150, 12))
+svg(
+    "vinyl",
+    '<pattern id="s" width="56" height="10" patternUnits="userSpaceOnUse"><rect width="56" height="10" fill="#f7d3db"/><rect width="28" height="10" fill="#f4a9bb"/></pattern>',
     '<rect width="400" height="500" fill="url(#s)"/>'
-    '<rect x="0" y="420" width="400" height="80" fill="#5a4632"/><path d="M0 440 H400 M0 480 H400" stroke="#8a6a48" stroke-width="8"/>'
-    f'<g transform="translate(110 300) rotate(-18)">{arm}<rect width="300" height="26" fill="none" stroke="#1b1b1b" stroke-width="4"/></g>'
-    '<rect x="92" y="150" width="26" height="290" fill="#1b1b1b"/>'
-    '<rect x="40" y="110" width="130" height="80" rx="40" fill="#1b1b1b"/>'
-    '<circle cx="80" cy="150" r="36" fill="#ff4b4b" opacity=".3"/><circle cx="80" cy="150" r="24" fill="#ff4b4b"/><circle cx="130" cy="150" r="24" fill="#5a2020"/>'
-    '<rect x="55" y="215" width="100" height="70" rx="12" fill="#f2b632" stroke="#1b1b1b" stroke-width="4"/>'
-    + eyes(88, 122, 245, 8)
-    + '<path d="M95 268 Q105 262 115 268" stroke="#1b1b1b" stroke-width="4" fill="none" stroke-linecap="round"/>'
-    f'<path d="M320 90 {STAR}" fill="#f2b632"/>',
+    f'<circle cx="200" cy="260" r="160" fill="#1b1b1b"/>{grooves}'
+    '<circle cx="200" cy="260" r="62" fill="#f2b632" stroke="#1b1b1b" stroke-width="5"/><circle cx="200" cy="260" r="6" fill="#1b1b1b"/>'
+    '<circle cx="182" cy="248" r="5" fill="#1b1b1b"/><circle cx="218" cy="248" r="5" fill="#1b1b1b"/>'
+    '<path d="M184 280 Q200 294 216 280" stroke="#1b1b1b" stroke-width="4" fill="none" stroke-linecap="round"/>'
+    '<path d="M90 110 a40 40 0 0 1 60 -30" stroke="#fdf6ea" stroke-width="6" fill="none" stroke-linecap="round" opacity=".7"/>'
+    '<g fill="#d81e2c"><path d="M320 380 v-60 l40 -10 v60" stroke="#d81e2c" stroke-width="6" fill="none"/><ellipse cx="312" cy="382" rx="12" ry="9"/><ellipse cx="352" cy="372" rx="12" ry="9"/></g>'
+    '<path d="M60 420 v-40" stroke="#2f6b6b" stroke-width="6"/><ellipse cx="52" cy="422" rx="11" ry="8" fill="#2f6b6b"/>',
 )
 
 # Status Badge: an e-ink lanyard badge

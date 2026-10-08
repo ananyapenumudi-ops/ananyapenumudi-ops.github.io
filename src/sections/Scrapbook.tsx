@@ -10,7 +10,7 @@ export function Scrapbook() {
             <span className="sec-kicker" data-reveal>the idea board</span>
             <h2 className="sec-title" data-reveal>Things I want to build next</h2>
           </div>
-          <p className="sec-note" data-reveal>Ten ideas on my workbench, each with its own mascot. Hover (or tap) a strip to peek. Some are silly, some are serious, and all of them are things I'd love to make.</p>
+          <p className="sec-note" data-reveal>Ten unrelated things I'd love to make: half hardware, half software, all a little silly. Hover (or tap) a strip to peek.</p>
         </div>
       </div>
       <div className="flex justify-center">

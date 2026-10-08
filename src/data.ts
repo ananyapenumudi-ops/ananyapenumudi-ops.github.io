@@ -21,8 +21,9 @@ export const images = {
   lock: art('lock'),
   plant: art('plant'),
   printer: art('printer'),
-  toytrain: art('toytrain'),
-  crossing: art('crossing'),
+  museum: art('museum'),
+  tomato: art('tomato'),
+  vinyl: art('vinyl'),
   badge: art('badge'),
   pencil: art('pencil'),
 };
@@ -35,23 +36,26 @@ export const docs = {
   bhelCert: drive('16mDEpE9koYvorrJpGuh5ZN004jtG2wrX'),
   alfagoCert: drive('1Gtoaz6f3XO0bQzgjHT4G-XAV1L3BHDb_'),
   ideathonCert: drive('1jPCXMfigmvvXgMQub1-DiE9gDc0QkC1H'),
+  convergenceCert: drive('1ziS1uKQ0UtFztXfHGNv8Hq73acEiVBjp'),
+  demuxCert: drive('1IDa8FzrdquvvZvrPapB-Qs3R_pxVY9Fd'),
+  conclaveCert: drive('1jPLxF_J3GC9K4ZC5wNVo5O-M-0838fr_'),
   tableauCert: 'https://www.udemy.com/certificate/UC-f3417426-3a7c-4bad-aeaf-892ec4fb1019/',
   wipeRepo: 'https://github.com/VedarthamSaaket/oblvn',
   kartgenLor: './docs/Kartgen_Letter_of_Recommendation.pdf',
 };
 
-// The hover-expand strip: things I want to build next, each with its own mascot.
+// The hover-expand strip: standalone things I'd love to build, hardware and software, each with its own mascot.
 export const ideas = [
-  { src: images.duck, alt: 'Duck mascot', code: '# 01 · idea', title: 'Desk Duck', caption: 'A rubber-duck debugger that asks good questions and quacks when you find the bug' },
-  { src: images.cat, alt: 'Cat with chai mascot', code: '# 02 · idea', title: 'Chai-o-meter', caption: 'A smart coaster that knows when your chai is getting cold' },
-  { src: images.plant, alt: 'Grumpy plant mascot', code: '# 03 · idea', title: 'Moody Monstera', caption: 'A plant Tamagotchi that sulks on e-ink when it is thirsty' },
-  { src: images.printer, alt: 'Printer mascot', code: '# 04 · idea', title: 'Daily Poster Printer', caption: 'A thermal printer that prints a tiny illustrated poster every morning' },
-  { src: images.toytrain, alt: 'Toy train mascot', code: '# 05 · idea', title: 'KAVACH Jr.', caption: 'A tabletop train that brakes itself at red signals, to teach train protection' },
-  { src: images.frog, alt: 'Frog holding an ESP32', code: '# 06 · idea', title: 'Elementium for circuits', caption: 'A virtual embedded lab where Elio catches wiring mistakes before you flash' },
-  { src: images.crossing, alt: 'Level crossing mascot', code: '# 07 · idea', title: 'KAVACH-Lite', caption: 'LoRa trackside nodes that warn rail crossings of approaching trains' },
-  { src: images.badge, alt: 'E-ink badge mascot', code: '# 08 · idea', title: 'Status Badge', caption: 'An NFC e-ink hackathon badge that shows your mood and swaps contacts' },
-  { src: images.pencil, alt: 'Pencil mascot', code: '# 09 · idea', title: 'Doodle-to-Circuit', caption: 'Sketch a circuit on paper, computer vision turns it into a simulation' },
-  { src: images.flower, alt: 'Flower mascot', code: '# 10 · idea', title: 'Room Mood Mural', caption: 'Room sensors paint a slowly changing poster in this palette' },
+  { src: images.duck, alt: 'Duck mascot', code: '# 01 · software', title: 'Desk Duck', caption: 'A VS Code rubber duck that asks you questions while you explain your bug' },
+  { src: images.cat, alt: 'Cat with chai mascot', code: '# 02 · hardware', title: 'Chai-o-meter', caption: 'A smart coaster that knows when your chai is getting cold' },
+  { src: images.museum, alt: 'Sock on a museum pedestal', code: '# 03 · software', title: 'Pocket Museum', caption: 'Snap any everyday object and get a very serious museum placard for it' },
+  { src: images.plant, alt: 'Grumpy plant mascot', code: '# 04 · hardware', title: 'Moody Monstera', caption: 'A plant Tamagotchi that sulks on e-ink when it is thirsty' },
+  { src: images.tomato, alt: 'Tomato chef mascot', code: '# 05 · software', title: 'Fridge Chef', caption: 'Photograph your fridge and get recipes for what is actually in it' },
+  { src: images.printer, alt: 'Printer mascot', code: '# 06 · hardware', title: 'Daily Poster Printer', caption: 'A thermal printer that prints a tiny illustrated poster every morning' },
+  { src: images.daisy, alt: 'Daisy mascot', code: '# 07 · software', title: 'Cosy Focus Room', caption: 'A Pomodoro timer where every focus session adds furniture to a pixel room' },
+  { src: images.badge, alt: 'E-ink badge mascot', code: '# 08 · hardware', title: 'Status Badge', caption: 'An NFC e-ink badge that shows your mood and swaps contacts with a tap' },
+  { src: images.vinyl, alt: 'Vinyl record mascot', code: '# 09 · software', title: 'Mixtape Posters', caption: 'Turns your week of music into a printable retro gig poster' },
+  { src: images.pencil, alt: 'Pencil mascot', code: '# 10 · software', title: 'Doodle-to-Circuit', caption: 'Sketch a circuit on paper and computer vision turns it into a simulation' },
 ];
 
 export const roles = ['embedded engineer', 'IoT tinkerer', 'safety nerd', 'maker of cute things'];
@@ -182,9 +186,9 @@ export const certifications = [
 
 export const activities = [
   { year: '2025', title: 'Smart India Hackathon', desc: 'Solution design, prototyping & documentation' },
-  { year: '2025', title: '24-hour Hackathon · Convergence', desc: 'VNRVJIET' },
-  { year: '2025', title: 'National Conclave', desc: 'CBIT' },
-  { year: '2024', title: '24-hour Hackathon · DEMUX', desc: 'BVRIT' },
+  { year: '2025', title: '24-hour Hackathon · Convergence', desc: 'VNRVJIET', url: docs.convergenceCert },
+  { year: '2025', title: 'National Conclave', desc: 'CBIT', url: docs.conclaveCert },
+  { year: '2024', title: '24-hour Hackathon · DEMUX', desc: 'BVRIT', url: docs.demuxCert },
   { year: '2023', title: 'IDEATHON, 2nd Prize', desc: 'VNRVJIET', highlight: true, url: docs.ideathonCert },
 ];
 
