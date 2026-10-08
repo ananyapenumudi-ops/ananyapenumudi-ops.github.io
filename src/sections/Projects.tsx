@@ -40,7 +40,7 @@ export function Projects() {
             <span className="sec-kicker" data-reveal>selected work</span>
             <h2 className="sec-title" data-reveal>Things I've built</h2>
           </div>
-          <p className="sec-note" data-reveal>Three projects I'm proudest of: one about keeping trains apart, one about making chemistry click, and one about making data truly disappear.</p>
+          <p className="sec-note" data-reveal>Things I'm proud of: keeping trains apart, making chemistry click, a photo booth that prints strips, and making data truly disappear.</p>
         </div>
 
         {projects.map((p, i) => <ProjectCard key={p.slug} p={p} index={i} flip={i % 2 === 1} />)}

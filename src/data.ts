@@ -24,6 +24,9 @@ export const images = {
   museum: art('museum'),
   tomato: art('tomato'),
   vinyl: art('vinyl'),
+  signal: art('signal'),
+  camera: art('camera'),
+  certificate: art('certificate'),
   badge: art('badge'),
   pencil: art('pencil'),
 };
@@ -42,6 +45,11 @@ export const docs = {
   tableauCert: 'https://www.udemy.com/certificate/UC-f3417426-3a7c-4bad-aeaf-892ec4fb1019/',
   wipeRepo: 'https://github.com/VedarthamSaaket/oblvn',
   kartgenLor: './docs/Kartgen_Letter_of_Recommendation.pdf',
+  elementiumLive: 'https://elementium-ai-seven.vercel.app',
+  signalsafeRepo: 'https://github.com/ananyapenumudi-ops/signalsafe',
+  signalsafeDocs: 'https://github.com/ananyapenumudi-ops/signalsafe/blob/main/docs/SignalSafe-Documentation.pdf',
+  captureRepo: 'https://github.com/ananyapenumudi-ops/capture-factory',
+  certRepo: 'https://github.com/ananyapenumudi-ops/AEREO_assignment',
 };
 
 // The hover-expand strip: standalone things I'd love to build, hardware and software, each with its own mascot.
@@ -124,8 +132,10 @@ export const projects: Project[] = [
     body: 'An intelligent virtual chemistry lab. Explore a 360° 3D lab, drag apparatus onto the bench and run a real-time titration with colour-change chemistry, guided by Elio, a Gemini-powered tutor who catches your mistakes.',
     more: 'A rule-based engine enforces safe experimental order, an observation notebook records every reading, and results such as water hardness are calculated automatically at the endpoint. Built for a whole class at once.',
     tags: ['React Three Fiber', 'Three.js', 'FastAPI', 'MongoDB Atlas', 'Gemini AI'],
-    links: [{ label: 'GitHub', url: 'https://github.com/Ananyapenumudi/elementium' }],
-    // TODO: add { label: 'Live site', url: ... } once Elementium is deployed
+    links: [
+      { label: 'Live site', url: docs.elementiumLive },
+      { label: 'GitHub', url: 'https://github.com/Ananyapenumudi/elementium' },
+    ],
   },
   {
     slug: 'kavach',
@@ -144,15 +154,53 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: 'signalsafe',
+    title: 'SignalSafe',
+    kicker: 'KAVACH test-bench digital twin · in progress',
+    date: 'Oct 2026',
+    art: images.signal,
+    theme: 'sage',
+    body: 'A browser-based digital twin of the KAVACH Generic Test Bench. Build a yard, run onboard and stationary KAVACH through it, inject the faults the field throws at them, and get a clause-by-clause verdict on what the system did and why.',
+    more: 'Grounded in RDSO’s KAVACH System Requirements Specification, with a deterministic simulation engine, causal event logs and a scroll-driven 3D landing page. Weeks 1–3 of an 8-week plan are done.',
+    tags: ['TypeScript', 'React', 'three.js', 'Web Workers', 'Zod', 'Vitest'],
+    links: [
+      { label: 'GitHub', url: docs.signalsafeRepo },
+      { label: 'Documentation', url: docs.signalsafeDocs },
+    ],
+  },
+  {
+    slug: 'capture-factory',
+    title: 'Capture Factory',
+    kicker: 'Retro photo booth · web',
+    date: 'Oct 2026',
+    art: images.camera,
+    theme: 'pink',
+    body: 'A retro photo booth that runs in your browser: strike a pose, get a 3-2-1 countdown and walk away with a printed-style photo strip and an “Admit One” ticket stub.',
+    more: '40 original stickers, 12 frames, filters written as pixel maths so they work on iPhone Safari, and undo/redo. Everything stays on your device: no uploads, no accounts.',
+    tags: ['React 19', 'TypeScript', 'Konva', 'Zustand', 'Canvas', 'Camera API'],
+    links: [{ label: 'GitHub', url: docs.captureRepo }],
+  },
+  {
     slug: 'wipe',
     title: 'AI-Enhanced Secure Data Wiping',
-    kicker: 'AI + cybersecurity',
+    kicker: 'AI + cybersecurity · collaboration',
     date: 'Nov 2025',
     art: images.lock,
     theme: 'sage',
-    body: 'A data-sanitisation platform: upload any number of files and folders and they are binary-overwritten so they cannot be recovered. Every wipe comes with cryptographic proof, and AI-based anomaly detection flags anything that looks off.',
+    body: 'A data-sanitisation platform I built with a teammate: upload any number of files and folders and they are binary-overwritten so they cannot be recovered. Every wipe comes with cryptographic proof, and AI-based anomaly detection flags anything that looks off.',
     tags: ['Cryptographic verification', 'Anomaly detection', 'Binary overwrite', 'Team project'],
-    links: [{ label: 'GitHub (team)', url: docs.wipeRepo }],
+    links: [{ label: 'GitHub (collab)', url: docs.wipeRepo }],
+  },
+  {
+    slug: 'certificates',
+    title: 'Bulk Certificate Generator',
+    kicker: 'Backend API',
+    date: 'Oct 2026',
+    art: images.certificate,
+    theme: 'mustard',
+    body: 'A FastAPI backend that takes a list of recipients as JSON or CSV, generates a PDF certificate for each one in the background, and lets you track progress and download them one by one or as a ZIP.',
+    tags: ['Python', 'FastAPI', 'SQLAlchemy 2', 'ReportLab', 'pytest', 'GitHub Actions'],
+    links: [{ label: 'GitHub', url: docs.certRepo }],
   },
 ];
 
