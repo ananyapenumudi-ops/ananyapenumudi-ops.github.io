@@ -10,7 +10,7 @@ export const links = {
 const art = (name: string) => `./art/${name}.svg`;
 
 export const images = {
-  elLogo: './projects/elementium/logo.png',
+  elLogo: './projects/elementium/elementium-logo.png',
   cat: art('cat'),
   duck: art('duck'),
   flower: art('flower'),
