@@ -3,14 +3,14 @@ import { images, inTheLab, projects, type Project } from '@/data';
 
 function ProjectCard({ p, index, flip }: { p: Project; index: number; flip: boolean }) {
   return (
-    <article className={`proj theme-${p.theme}${flip ? ' flip' : ''}${p.status ? ' concept' : ''}`} data-reveal>
+    <article id={p.slug} className={`proj theme-${p.theme}${flip ? ' flip' : ''}${p.status ? ' concept' : ''}`} data-reveal>
       <div className="proj-art">
         <span className="proj-num">{String(index + 1).padStart(2, '0')}</span>
         {p.status && <span className="stamp">{p.status}</span>}
-        <img src={p.art} alt="" loading="lazy" />
+        <img src={p.art} alt="" loading="lazy" width={400} height={500} />
       </div>
       <div className="proj-body">
-        {p.slug === 'elementium' && <img className="el-logo" src={images.elLogo} alt="Elementium logo" loading="lazy" />}
+        {p.slug === 'elementium' && <img className="el-logo" src={images.elLogo} alt="Elementium logo" loading="lazy" width={240} height={204} />}
         <span className="proj-kicker">{p.kicker}</span>
         <h3>{p.title}</h3>
         <p>{p.body}</p>

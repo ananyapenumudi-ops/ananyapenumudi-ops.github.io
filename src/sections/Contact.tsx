@@ -7,7 +7,7 @@ export function Contact() {
     <>
       <section className="contact" id="contact">
         <div className="wrap contact-grid">
-          <div className="contact-art" data-reveal><img src={images.duck} alt="Illustrated duck saying hi" loading="lazy" /></div>
+          <div className="contact-art" data-reveal><img src={images.duck} alt="Illustrated duck saying hi" loading="lazy" width={400} height={500} /></div>
           <div>
             <span className="sec-kicker" data-reveal>let's talk</span>
             <h2 className="say-hi" data-reveal aria-label="Say hi!">

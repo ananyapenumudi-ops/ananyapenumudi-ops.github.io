@@ -45,7 +45,6 @@ export const docs = {
   tableauCert: 'https://www.udemy.com/certificate/UC-f3417426-3a7c-4bad-aeaf-892ec4fb1019/',
   wipeRepo: 'https://github.com/VedarthamSaaket/oblvn',
   kartgenLor: './docs/Kartgen_Letter_of_Recommendation.pdf',
-  elementiumLive: 'https://elementium-ai-seven.vercel.app',
   signalsafeRepo: 'https://github.com/ananyapenumudi-ops/signalsafe',
   signalsafeDocs: 'https://github.com/ananyapenumudi-ops/signalsafe/blob/main/docs/SignalSafe-Documentation.pdf',
   captureRepo: 'https://github.com/ananyapenumudi-ops/capture-factory',
@@ -132,10 +131,7 @@ export const projects: Project[] = [
     body: 'An intelligent virtual chemistry lab I built with my team. Explore a 360° 3D lab, drag apparatus onto the bench and run a real-time titration with colour-change chemistry, guided by Elio, a Gemini-powered tutor who catches your mistakes.',
     more: 'A rule-based engine enforces safe experimental order, an observation notebook records every reading, and results such as water hardness are calculated automatically at the endpoint. Built for a whole class at once.',
     tags: ['React Three Fiber', 'Three.js', 'FastAPI', 'MongoDB Atlas', 'Gemini AI'],
-    links: [
-      { label: 'Live site', url: docs.elementiumLive },
-      { label: 'GitHub', url: 'https://github.com/Ananyapenumudi/elementium' },
-    ],
+    links: [{ label: 'GitHub', url: 'https://github.com/Ananyapenumudi/elementium' }],
   },
   {
     slug: 'kavach',

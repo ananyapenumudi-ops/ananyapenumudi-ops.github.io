@@ -39,7 +39,7 @@ export function About() {
         <div className="traits">
           {traits.map((t) => (
             <div className="trait" key={t.title} data-reveal>
-              <div className="trait-art"><img src={t.art} alt="" loading="lazy" /></div>
+              <div className="trait-art"><img src={t.art} alt="" loading="lazy" width={400} height={500} /></div>
               <div className="trait-body">
                 <h4>{t.title}</h4>
                 <p>{t.body}</p>

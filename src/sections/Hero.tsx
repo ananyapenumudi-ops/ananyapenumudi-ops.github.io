@@ -24,8 +24,21 @@ function useTypedRoles() {
   return text;
 }
 
-const Wavy = ({ text, className }: { text: string; className: string }) => (
-  <span className={className} aria-label={text}>
+// Each hero mascot is a shortcut to the section it belongs to.
+const MascotTile = ({ cls, src, target, label }: { cls: string; src: string; target: string; label: string }) => (
+  <a
+    href={`#${target}`}
+    className={`tile ${cls}`}
+    aria-label={`Jump to ${label}`}
+    onClick={(e) => { e.preventDefault(); scrollToTarget(`#${target}`); }}
+  >
+    <img src={src} alt="" width={400} height={500} />
+  </a>
+);
+
+const Wavy = ({ text, label, className }: { text: string; label: string; className: string }) => (
+  <span className={className}>
+    <span className="sr-only">{label}</span>
     {text.split('').map((c, i) => (
       <span key={i} aria-hidden="true" style={{ ['--i' as string]: i }}>{c}</span>
     ))}
@@ -38,17 +51,17 @@ export function Hero() {
   return (
     <section className="hero" id="top">
       <div className="poster">
-        <div className="tile t-a"><img src={images.flask} alt="" /></div>
-        <div className="tile t-b tilt-r"><img src={images.duck} alt="" /></div>
-        <div className="tile t-c"><img src={images.flower} alt="" /></div>
-        <div className="tile t-d tilt-r"><img src={images.frog} alt="" /></div>
+        <MascotTile cls="t-a" src={images.flask} target="elementium" label="Elementium AI" />
+        <MascotTile cls="t-b tilt-r" src={images.duck} target="contact" label="say hi" />
+        <MascotTile cls="t-c" src={images.flower} target="ideas" label="the idea board" />
+        <MascotTile cls="t-d tilt-r" src={images.frog} target="about" label="about me" />
 
         <div className="tile t-title">
           <Sparkle className="star" size={30} />
           <Sparkle className="star" size={18} />
           <span className="hello-small">hi there, I'm</span>
-          <h1><Wavy text="ANANYA" className="wavy" /></h1>
-          <div className="surname">Penumudi</div>
+          <h1><Wavy text="ANANYA" label="Ananya Penumudi" className="wavy" /></h1>
+          <div className="surname" aria-hidden="true">Penumudi</div>
           <p className="typed">an <b>{role}</b><span className="caret">|</span></p>
           <div className="hero-ctas">
             <a href="#projects" className="pill pill-red" onClick={(e) => { e.preventDefault(); scrollToTarget('#projects'); }} data-magnetic>See my work</a>
@@ -56,10 +69,10 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="tile t-e"><img src={images.daisy} alt="" /></div>
-        <div className="tile t-f tilt-r"><img src={images.cat} alt="" /></div>
-        <div className="tile t-g"><img src={images.train} alt="" /></div>
-        <div className="tile t-h tilt-r"><img src={images.tomato} alt="" /></div>
+        <MascotTile cls="t-e" src={images.daisy} target="ideas" label="the idea board" />
+        <MascotTile cls="t-f tilt-r" src={images.cat} target="ideas" label="the idea board" />
+        <MascotTile cls="t-g" src={images.train} target="kavach" label="the KAVACH thesis" />
+        <MascotTile cls="t-h tilt-r" src={images.tomato} target="ideas" label="the idea board" />
       </div>
 
       <div className="ribbon" aria-hidden="true">

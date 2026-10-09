@@ -98,7 +98,7 @@ export const HoverExpand_001 = ({
                   </motion.div>
                 )}
               </AnimatePresence>
-              <img src={image.src} className="size-full object-cover" alt={image.alt} draggable={false} />
+              <img src={image.src} className="size-full object-cover" alt={image.alt} draggable={false} width={400} height={500} loading="lazy" />
             </motion.div>
           );
         })}
